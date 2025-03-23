@@ -1,0 +1,67 @@
+column_style : "normal"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Colors of the heatmap are in correspondence to the beta coefficient for frailty-related clinical biomarkers from linear regression models in MaAsLin with frailty-related species (AST-transformed relative abundance) as outcomes. The biomarkers levels were standardized into Z-scores of in before including them in the MaAsLin models. All models corrected for age, sex, BMI, smoking, drinking status, educational level, and physical activity level. The Benjamini-Hochberg method is used to calculate FDR-adjusted P values to address the multiple comparison issue. These analyses were based on 1,448 samples. All the statical tests were two-sided."
+
+data_location :
+ path_to_file : downloads/12Pu2023.csv
+ delimiter : ','
+
+provenance : 
+ publication : 'PMID:39054372'
+ publication_name : 'Gut microbial features and circulating metabolomic signatures of frailty in older adults'
+ author_year : 'Pu et. al. (2024)'
+ journal : Nature Ageing
+ authors : Pu et. al.
+ year_published : 2024
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs43587-024-00678-0/MediaObjects/43587_2024_678_MOESM12_ESM.csv
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : Species
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+
+object :
+ value_column_name : Clinical indicator
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+   - pattern : " num" 
+     replacement : ~
+   - pattern : B2M
+     replacement : 'Beta-2 microglobulin'
+   - pattern : WBC
+     replacement : 'Leukocyte count'
+   - pattern : HDLC
+     replacement : 'HDL Cholesterol'
+   - pattern : Urate
+     replacement : Uric Acid
+   - pattern : Folate
+     replacement : Folic Acid
+   - pattern : Platelet
+     replacement : Platelet count - finding
+   - pattern : eGFR
+     replacement : Estimated glomerular filtration rate
+
+predicate : biolink:associated_with
+
+attributes : 
+ p :
+   column_name : qval
+ relationship_strength :
+   column_name : Coefficient
+ n  :
+   value : 1448
+ relationship_type : 
+   value : linear_regression
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

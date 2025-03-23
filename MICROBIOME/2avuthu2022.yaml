@@ -1,0 +1,51 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Top 20 abundance species from each dataset"
+
+data_location :
+ path_to_file : downloads/2avuthu2022.xlsx
+ sheet_to_use : Rel_abundance_top20species
+ first_line : 2
+ last_line : 121
+
+provenance : 
+ publication : 'PMC:PMC1170805'
+ publication_name : "Meta-Analysis of Altered Gut Microbiota Reveals Microbial and Metabolic Biomarkers for Colorectal Cancer"
+ authors : Avuthu et. al.
+ year_published : 2023
+ journal : Microbiology Spectrum
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9431300/bin/spectrum.00013-22-s0003.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value_column_name : C
+ regex_replacements :
+   - pattern : "Washington,DC"
+     replacement : "United States of America"
+
+attributes : 
+ p :
+   value : not_applicable
+ n :
+   value : 28
+ relationship_strength : 
+  column_name : B
+ relationship_type : 
+   value : Relative abundance
+ p_correction_method : 
+   value : benjamin_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

@@ -1,0 +1,69 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+data_location :
+ path_to_file : downloads/Kurilshikov2021.xlsx
+
+provenance : 
+ publication : 'PMC:PMC8515199'
+ publication_name : Large-scale association analyses identify host factors influencing human gut microbiome composition
+ year_published : 2021
+ journal : Nature Genetics
+ authors : Kurilshikov et. al.
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/8515199/bin/NIHMS1746460-supplement-Supplementary_tables.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '^.*?\.'
+     replacement : ~
+   - pattern : '\..*$'
+     replacement : ~
+   - pattern : '^.*?\.'
+     replacement : ~
+
+predicate : biolink:correlated_with
+
+object :
+ value_column_name : C
+ regex_replacements :
+   - pattern : 'lowenergy'
+     replacement : ~   
+
+attributes : 
+ p :
+   column_name : E
+ relationship_strength : 
+  column_name : D
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     sheet_to_use : 10_BacPheno_LLD
+     first_line : 4
+     last_line : 648
+   attributes :
+     n :
+       value : 1135
+   method_notes : "The table contains the results of the correlation analysis of taxa that have at least one mbQTL or mbBTL at P<5x10-8 and the 207 phenotypes measured in the LLD cohort as described in (Zhernakova et al, Science, 2016) 3. MbTLtype: indication if the associated taxon has a mbQTL or mbBTL. Taxon: name of taxon. Phenotype: name of associated phenotype. SpearmanR: Spearman correlation between bacteria and phenotype. Pvalue: p-value for Spearman correlation. FDR: p-value adjusted using Benjamini-Hochberg procedure."
+ - data_location :
+     sheet_to_use : 11_BacPheno_FGFP
+     first_line : 4
+     last_line : 106
+   attributes :
+     n :
+       value : 1106
+   method_notes : "The table contains the results of the correlation analysis of taxa that have at least one quantitative or binary mbTL at p<5x10-8 and the 503 phenotypes measured in the FGFP cohort as described in Falony et al, Science, 2016 4. Mb-TLtype: indication if taxon was associated in binary or quantitative analysis. Taxon: name of taxon. Phenotype: name of associated phenotype. SpearmanR: Spearman correlation between bacteria and phenotype. Pvalue: p-value for Spearman correlation. FDR: p-value corrected for false discovery rate."

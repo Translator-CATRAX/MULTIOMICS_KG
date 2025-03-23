@@ -1,0 +1,69 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+method_notes : "Genome-microbiome interactions for blood metabolite regression models with a significant interaction term. P-values were obtained from a two-sided Wald test on the interaction term coefficient γ of the ordinary least squares regression model."
+
+data_location :
+ path_to_file : downloads/Diener2022.xlsx
+ sheet_to_use : Table S3
+ first_line : 1
+ last_line : 23127
+
+provenance : 
+ publication : 'PMC:PMC9691620'
+ journal : 'Nature Metabolism'
+ publication_name : 'Genome-microbiome interplay provides insight into the determinants of the human blood metabolome'
+ authors : 'Diener et. al.'
+ year_published : 2022
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9691620/bin/NIHMS1845232-supplement-1845232_Sup_Tab_1-5.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : O
+ regex_replacements :
+   - pattern : \(.*
+     replacement : ~
+   - pattern : '\*'
+     replacement : ~
+   - pattern : '\s+$'
+     replacement : ~
+   - pattern : '\.*'
+     replacement : ~ 
+
+predicate : biolink:associated_with
+
+object :
+ value_column_name : B
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '^.*?\|'
+     replacement : " "
+   - pattern : '_(.*)'
+     replacement : ~
+   - pattern : "^[^a-zA-Z]*"
+     replacement : ~
+   - pattern : "Family"
+     replacement : ~
+   - pattern : "amily"
+     replacement : ~
+
+attributes : 
+ p :
+   column_name : F
+ n  :
+   value : 3064 
+ relationship_strength : 
+  column_name : E
+ relationship_type : 
+   value : two_sided_wald_test
+ p_correction_method : 
+   value : bonferroni
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

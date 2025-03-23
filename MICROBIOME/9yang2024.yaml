@@ -1,0 +1,123 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+method_notes : "Differential secondary bile acid production microorganisms consistent with alteration of corresponding gene in patiens with UC, CD, CRC and NAFLD"
+
+data_location :
+ path_to_file : downloads/9yang2024.xlsx
+ sheet_to_use : Sheet1
+ first_line : 4
+
+provenance : 
+ publication : 'PMC:PMC11748489'
+ publication_name : Systematic identification of secondary bile acid production genes in global microbiome
+ authors : Yang et. al.
+ year_published : 2024
+ journal : mSystems
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/11748489/bin/msystems.00817-24-s0009.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ expected_classes :
+   - biolink:Gene
+ expected_taxa :
+   - NCBITaxon:9606
+
+
+attributes : 
+ n :
+   value : 28813
+ relationship_strength :
+   value : not_applicable
+ relationship_type : 
+   value : Mann-Whitney U-test
+ p_correction_method : 
+   value : not_applicable
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - attributes :
+     p :
+       column_name : E
+   object :
+     value : 7α-HSDH
+   subject :
+     value_column_name : B
+   data_location :
+     last_line : 10
+ - attributes :
+     p :
+       column_name : J
+   object :
+     value : BSH
+   subject :
+     value_column_name : G
+   data_location :
+     last_line : 38
+ - attributes :
+     p :
+       column_name : O
+   object :
+     value : Bai genes
+   subject :
+     value_column_name : L
+   data_location :
+     last_line : 5
+ - attributes :
+     p :
+       column_name : T
+   object :
+     value : 12α-HSDH
+   subject :
+     value_column_name : Q
+   data_location :
+     last_line : 32
+ - attributes :
+     p :
+       column_name : "Y"
+   object :
+     value : BSH
+   subject :
+     value_column_name : V
+   data_location :
+     last_line : 14
+ - attributes :
+     p :
+       column_name : AD
+   object :
+     value : 7α-HSDH
+   subject :
+     value_column_name : AA
+   data_location :
+     last_line : 18
+ - attributes :
+     p :
+       column_name : AI
+   object :
+     value : Bai genes
+   subject :
+     value_column_name : AF
+   data_location :
+     last_line : 5
+ - attributes :
+     p :
+       column_name : AN
+   object :
+     value : 3α-HSDH
+   subject :
+     value_column_name : AK
+   data_location :
+     last_line : 5

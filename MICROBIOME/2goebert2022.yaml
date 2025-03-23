@@ -1,0 +1,77 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : " Results include p- value based in Infection category, False Discover Rate (FDR), adjusted p- value based on Tissue and Infection status, Paired p- value (Tukey), and mean abundance for each Tissue and Infection condition."
+
+data_location :
+ path_to_file : downloads/2Gobert2022.xlsx
+ first_line : 2
+
+provenance : 
+ publication : 'PMC:PMC9212162'
+ publication_name : Clinical helminth infections alter host gut and saliva microbiota
+ journal : PLOS Neglected Tropical Diseases
+ authors : Gobert et. al.
+ year_published : 2022
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9212162/bin/pntd.0010491.s003.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes : 
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : ".*__"
+     replacement : ~
+   - pattern : \.
+     replacement : " "
+   - pattern : "_"
+     replacement : " "
+   - pattern : " OTU.*"
+     replacement : ~
+
+predicate : biolink:associated_with
+
+object :
+ value : Helminthiasis
+ expected_classes:
+   - biolink:Disease
+
+attributes : 
+ p :
+   column_name : C
+ n  :
+   value : 66
+ relationship_strength : 
+  value : "not applicable"
+ relationship_type : 
+   value : ANOVA
+ p_correction_method : 
+   value : "unspecified"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     sheet_to_use : OTUs
+     last_line : 301
+ - data_location :
+     sheet_to_use : species
+     last_line : 197
+ - data_location :
+     sheet_to_use : genus
+     last_line : 141
+ - data_location :
+     sheet_to_use : family
+     last_line : 78
+ - data_location :
+     sheet_to_use : order
+     last_line : 42
+ - data_location :
+     sheet_to_use : phylum
+     last_line : 18

@@ -1,0 +1,61 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+data_location :
+ path_to_file : downloads/3Wilmanski2019.xls
+ sheet_to_use : proteomics_analysis
+ first_line : 3
+ last_line : 265
+
+provenance : 
+ publication : 'PMID:31477923'
+ publication_name : Blood metabolome predicts gut microbiome a-diversity in humans
+ authors : Wilmanski et. al.
+ year_published : 2019
+ journal : 'Nature Biotechnology'
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-019-0233-9/MediaObjects/41587_2019_233_MOESM5_ESM.xls
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:Gene
+ expected_taxa : 
+   - NCBITaxon:9606
+
+predicate : biolink:correlated_with
+
+object :
+ curie : EUPATH:0009259
+
+attributes : 
+ n :
+   value : 939
+ relationship_type : 
+   value : OLS regression
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - attributes : 
+     relationship_strength : 
+       column_name : F
+     p :
+       column_name : H
+     p_correction_method : 
+       value : benjamini_hochberg
+   method_notes : "P-value for each analyte from the univariate and multivariable OLS model, respectively, after adjusting for multiple hypothesis correction (Benjamini-Hochberg). Significant associations after multiple hypothesis correction are bolded (FDR<0.05,two-sided)."
+ - attributes : 
+     relationship_strength : 
+       column_name : C
+     p :
+       column_name : D
+     p_correction_method : 
+       value : not_applicable
+   method_notes : "P-value of the Beta-coefficient from a univariate and covariate adjusted OLS model, respectively"

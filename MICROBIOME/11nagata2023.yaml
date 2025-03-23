@@ -1,0 +1,53 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Gut microbial changes between COVID-19 and controls in the Hong Kong cohort"
+
+data_location :
+ path_to_file : downloads/Nagata2023.xlsx
+ sheet_to_use : S11
+ first_line : 3
+ last_line : 6048
+
+provenance : 
+ publication : 'PMC:PMC9499989'
+ publication_name : Human Gut Microbiota and Its Metabolites Impact Immune Responses in COVID-19 and Its Complications
+ journal : Nature Communications
+ authors : Nagata et. al.
+ year_published : 2023
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9499989/bin/mmc2.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes : 
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : " species.*"
+     replacement : ~
+   - pattern : ' \(id.*'
+     replacement : ~
+
+predicate : biolink:associated_with
+
+object :
+  value : COVID-19
+
+attributes : 
+ n :
+   column_name : F
+ p :
+   column_name : H
+ relationship_strength :
+   column_name : D
+ relationship_type : 
+   value : wilcoxon_rank_sum_test
+ p_correction_method : 
+   value : "unspecified"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

@@ -1,0 +1,78 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Significant associations between microbial genera and measured factors. Only associations that passed FDR < 0.05 are shown."
+
+data_location :
+ path_to_file : downloads/Manor2020.xlsx
+ sheet_to_use : Supplementary Data 4
+ first_line : 4
+ last_line : 1829
+
+provenance : 
+ publication : 'PMC:PMC7562722'
+ publication_name : Health and disease markers correlate with gut microbiome composition across thousands of people
+ authors : Manor et. al.
+ year_published : 2020
+ journal : 'Nature Communications'
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/7562722/bin/41467_2020_18871_MOESM4_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+object :
+ value_column_name : A
+ regex_replacements :
+   - pattern : \(.*
+     replacement : ~
+   - pattern : "s$"
+     replacement : ~
+   - pattern : "^[^a-zA-Z]*"
+     replacement : ~
+   - pattern : '\s+$'
+     replacement : ~
+ expected_taxa : 
+   - NCBITaxon:9606
+ classes_to_avoid :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+subject :
+ value_column_name : D
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : .unclassified
+     replacement : ~
+   - pattern : \.
+     replacement : ' '
+   - pattern : '^.*? '
+     replacement : ~
+   - pattern : "^[^a-zA-Z]*"
+     replacement : ~ 
+   - pattern : '\s?%'
+     replacement : ~
+   - pattern : ' .*'
+     replacement : ~
+
+attributes : 
+ p :
+   column_name : F
+ n  :
+   value : 3064 
+ relationship_strength : 
+  column_name : E
+  math:
+    - operation: copysign
+      parameter: '-1'
+      order_last: yes
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

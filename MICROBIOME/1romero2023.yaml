@@ -1,0 +1,94 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Multivariate analysis of relative abundances of amplicon sequence variants (ASVs) in vaginal 16S rRNA gene data as a function of gestational age, maternal age, parity, ethnicity, and marijuana use among women who ultimately delivered at term. The p-value and false discovery rate adjusted p-value (q-value) are provided for each covariate."
+
+data_location :
+ path_to_file : downloads/Romero2023.xlsx
+ sheet_to_use : SupplementalTable_1
+ first_line : 6
+ last_line : 161
+
+provenance : 
+ publication : 'PMC:PMC10434204'
+ publication_name : The Vaginal Microbiota of Pregnant Women Varies with Gestational Age, Maternal Age, and Parity
+ authors : Romero et. al.
+ year_published : 2023
+ journal : 'Microbiology Spectrum'
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/10434204/bin/spectrum.03429-22-s0001.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes : 
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : ";NA.*"
+     replacement : ~
+   - pattern : ".*;"
+     replacement : ~
+
+predicate : biolink:associated_with
+
+attributes : 
+ n  :
+   value : 474
+ relationship_type : 
+   value : LME_model
+ p_correction_method : 
+   value : 10_percent_false_discorvery_rate
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - object :
+     curie : UMLS:C0017504
+   attributes :
+     p :
+       column_name : G
+     relationship_strength :
+       column_name : E
+ - object :
+     curie : UMLS:C0024915
+   attributes :
+     p :
+       column_name : J
+     relationship_strength :
+       column_name : H
+ - object :
+     value : Cannabis use
+   attributes :
+     p :
+       column_name : G
+     relationship_strength :
+       column_name : E
+ - object :
+    value : Hispanic
+   attributes :
+     p :
+       column_name : G
+     relationship_strength :
+       column_name : E
+ - object :
+     curie : UMLS:C0085756
+   attributes :
+     p :
+       column_name : G
+       math :
+         - operation: copysign
+           parameter: '1'
+           order_last: yes
+     relationship_strength :
+       column_name : E
+ - object :
+     curie : UMLS:C0030563
+   attributes :
+     p :
+       column_name : G
+     relationship_strength :
+       column_name : E

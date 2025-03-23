@@ -1,0 +1,48 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Upper respiratory tract micobiota associated with age in healthy controls. Using 10 studies for which age metadata was available, ANCOVA was conducted using the following formula “clr ~ age + age2 + variable_region + sequencing + URT_site + region” that was used to determine significant associations with age, accounting for URT sampling site, geographic region, sequencing method, and 16S rRNA hypervariable region. The square term for age was included to determine if non-linear relationships existed between CLR and age. The p-values were corrected for multiple comparisons via the Benjamini–Hochberg FDR correction"
+
+data_location :
+ path_to_file : downloads/4bohmann2024.xlsx
+ sheet_to_use : Table 4
+ first_line : 4
+ last_line : 48
+
+provenance : 
+ publication : 'PMC:PMC11040984'
+ publication_name : "Meta-analysis of the human upper respiratory tract microbiome reveals robust taxonomic associations with health and disease"
+ authors : Bohmann et. al.
+ year_published : 2024
+ journal : 'BMC Biology'
+ table_url : https://static-content.springer.com/esm/art%3A10.1186%2Fs12915-024-01887-0/MediaObjects/12915_2024_1887_MOESM1_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value: "age"
+
+attributes : 
+ p :
+   column_name : C
+ n :
+   value : 4706
+ relationship_strength : 
+   value : not applicable
+ relationship_type : 
+   value : ANCOVA
+ p_correction_method : 
+   value : benjamini hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

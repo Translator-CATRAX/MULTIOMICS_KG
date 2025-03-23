@@ -1,0 +1,290 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+method_notes : "Spearman rank correlations between levels of metabolites and the abundances of bacterial species in the fecal microbiota of mice colonized with the healthy versus the severely stunted/underweight infant microbiota"
+
+data_location :
+ path_to_file : downloads/Blanton2016.xlsx
+ sheet_to_use : "Table S17."
+
+provenance : 
+ publication : 'PMC:PMC4787260'
+ publication_name : 'Gut bacteria that prevent growth impairments transmitted by microbiota from malnourished children'
+ authors : 'Blanton et. al.'
+ journal : 'Science'
+ year_published : 2016
+ table_url : https://www.science.org/doi/suppl/10.1126/science.aad3311/suppl_file/aad3311-blanton-sm-tables-s1-to-s17.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : 'None'
+     replacement : ~
+
+reindex : 
+  - column : p
+    value : "0.999"
+    mode : not_equal_to
+
+predicate : biolink:correlated_with
+
+attributes : 
+ n  :
+   value : 259
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : 'not_applicable'
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : glycine
+   attributes :
+     p :
+       column_name : AI
+     relationship_strength :
+       column_name : B
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : alanine
+   attributes :
+     p :
+       column_name : AJ
+     relationship_strength :
+       column_name : C
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : valine
+   attributes :
+     p :
+       column_name : AM
+     relationship_strength :
+       column_name : F
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : aspartate
+   attributes :
+     p :
+       column_name : AS
+     relationship_strength :
+       column_name : L
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : glutamine
+   attributes :
+     p :
+       column_name : AT
+     relationship_strength :
+       column_name : M
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : alanine
+   attributes :
+     p :
+       column_name : AY
+     relationship_strength :
+       column_name : R
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : serine
+   attributes :
+     p :
+       column_name : AZ
+     relationship_strength :
+       column_name : S
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : valine
+   attributes :
+     p :
+       column_name : BB
+     relationship_strength :
+       column_name : U
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : leucine
+   attributes :
+     p :
+       column_name : BC
+     relationship_strength :
+       column_name : V
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : isoleucine
+   attributes :
+     p :
+       column_name : BC
+     relationship_strength :
+       column_name : V
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : methionine
+   attributes :
+     p :
+       column_name : BD
+     relationship_strength :
+       column_name : W
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : histidine
+   attributes :
+     p :
+       column_name : BE
+     relationship_strength :
+       column_name : X
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : phenylalanine
+   attributes :
+     p :
+       column_name : BF
+     relationship_strength :
+       column_name : 'Y'
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : tyrosine
+   attributes :
+     p :
+       column_name : BG
+     relationship_strength :
+       column_name : Z
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : aspartate
+   attributes :
+     p :
+       column_name : BH
+     relationship_strength :
+       column_name : AA
+ - data_location :
+     first_line : 42
+     last_line : 72
+   object :
+     value : glutamine
+   attributes :
+     p :
+       column_name : BI
+     relationship_strength :
+       column_name : AB
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : pyruvate
+   attributes :
+     p :
+       column_name : T
+     relationship_strength :
+       column_name : C
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : fumarate
+   attributes :
+     p :
+       column_name : V
+     relationship_strength :
+       column_name : E
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : malate
+   attributes :
+     p :
+       column_name : W
+     relationship_strength :
+       column_name : F
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : alpha-ketoglutarate
+   attributes :
+     p :
+       column_name : X
+     relationship_strength :
+       column_name : G
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : citrate
+   attributes :
+     p :
+       column_name : 'Y'
+     relationship_strength :
+       column_name : H
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : succinate
+   attributes :
+     p :
+       column_name : AB
+     relationship_strength :
+       column_name : K
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : malate
+   attributes :
+     p :
+       column_name : AD
+     relationship_strength :
+       column_name : M
+ - data_location :
+     first_line : 78
+     last_line : 108
+   object :
+     value : citrate
+   attributes :
+     p :
+       column_name : AF
+     relationship_strength :
+       column_name : O

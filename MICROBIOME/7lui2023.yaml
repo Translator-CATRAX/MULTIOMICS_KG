@@ -1,0 +1,72 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Two-sample BMR identified causal relationships between the gut microbiome and longevity in the Finnish cohort."
+
+data_location :
+ path_to_file : downloads/7Liu2023.xlsx
+ sheet_to_use : Supplementary Table 6
+ first_line : 4
+ last_line : 646
+
+provenance : 
+ publication : 'PMC:PMC10052271'
+ publication_name : 'Mendelian randomization analyses reveal causal relationships between the human microbiome and longevity'
+ journal : Scientific Resports
+ authors : Liu et. al.
+ year_published : 2023
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-023-31115-8/MediaObjects/41598_2023_31115_MOESM7_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+predicate : biolink:affects
+
+attributes : 
+ relationship_type : 
+   value : Generalised Summary-data-based Mendelian Randomization
+ p_correction_method : 
+   value : "not_applicable"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - subject : 
+     value_column_name : A
+     expected_classes:
+       - biolink:OrganismTaxon
+     regex_replacements : 
+       - pattern : "_"
+         replacement : " "
+   object :
+     value : longevity
+     expected_classes:
+       - biolink:PhenotypicFeature
+   attributes :
+     n :
+       column_name : F
+     p :
+       column_name : E
+     relationship_strength :
+       column_name : C
+ - object : 
+     value_column_name : H
+     expected_classes:
+       - biolink:OrganismTaxon
+     regex_replacements : 
+       - pattern : "_"
+         replacement : " "
+   subject :
+     value : longevity
+     expected_classes:
+       - biolink:PhenotypicFeature
+   attributes :
+     n :
+       column_name : L
+     p :
+       column_name : K
+     relationship_strength :
+       column_name : I

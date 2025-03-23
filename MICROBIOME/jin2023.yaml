@@ -1,0 +1,51 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Bacterial genera that differed in absolute abundance between RA patients and healthy controls.The microbial profiles and bacterial loads of urinary microbiota were identified and quantified by 16S ribosomal RNA (16S rRNA) gene sequencing and quantitative PCR, respectively. P value < 0.05 was considered statistically significant."
+
+data_location :
+ path_to_file : downloads/Jin2023.xlsx
+ sheet_to_use : Supplementary Table 3
+ first_line : 3
+ last_line : 39
+
+provenance : 
+ publication : 'PMC:PMC10269647'
+ publication_name : "A Shifted Urinary Microbiota Associated with Disease Activity and Immune Responses in Rheumatoid Arthritis"
+ authors : Jin et. al.
+ year_published : 2023
+ journal : Microbiology Spectrum
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/10269647/bin/spectrum.03662-22-s0002.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value : rheumatoid arthritis
+
+attributes : 
+ p :
+   column_name : D
+ n :
+   value : 39
+ relationship_strength : 
+  column_name : B
+ relationship_type : 
+   value : spearman correlation
+ p_correction_method : 
+   value : unspecified
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

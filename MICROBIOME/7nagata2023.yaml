@@ -1,0 +1,103 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Gut microbial changes between COVID-19 complications"
+
+data_location :
+ path_to_file : downloads/Nagata2023.xlsx
+ sheet_to_use : S7
+ first_line : 4
+ last_line : 551
+
+provenance : 
+ publication : 'PMC:PMC9499989'
+ publication_name : Human Gut Microbiota and Its Metabolites Impact Immune Responses in COVID-19 and Its Complications
+ journal : Nature Communications
+ authors : Nagata et. al.
+ year_published : 2023
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9499989/bin/mmc2.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : H
+ expected_classes : 
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : " species.*"
+     replacement : ~
+
+predicate : biolink:associated_with
+
+reindex :
+ - mode : not_equal_to
+   column : relationship_strength
+   value : "NA"
+
+attributes : 
+ relationship_type : 
+   value : wilcoxon_rank_sum_test
+ p_correction_method : 
+   value : "unspecified"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - object :
+     value : "Long COVID-19"
+   attributes :
+     n :
+       column_name : L
+     p :
+       column_name : "N"
+     relationship_strength :
+       column_name : "J"
+ - object :
+     value : "Pneumonia"
+   attributes :
+     n :
+       column_name : Q
+     p :
+       column_name : S
+     relationship_strength :
+       column_name : O
+ - object :
+     value : "Low d-dimmer level"
+   attributes :
+     n :
+       column_name : V
+     p :
+       column_name : X
+     relationship_strength :
+       column_name : T  
+ - object :
+     value : "Kidney dysfunction"
+   attributes :
+     n :
+       column_name : AA
+     p :
+       column_name : AC
+     relationship_strength :
+       column_name : "Y"
+ - object :
+     value : "Liver dysfunction"
+   attributes :
+     n :
+       column_name : AF
+     p :
+       column_name : AH
+     relationship_strength :
+       column_name : AD
+ - object :
+     value : "Diarrhea"
+   attributes :
+     n :
+       column_name : AK
+     p :
+       column_name : AM
+     relationship_strength :
+       column_name : AI

@@ -1,0 +1,145 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+data_location :
+ sheet_to_use : "시트1"
+
+provenance : 
+ publication : 'PMC:PMC6417675'
+ publication_name : 'Fecal and blood microbiota profiles and presence of nonalcoholic fatty liver disease in obese versus lean subjects'
+ journal : 'PLoS ONE'
+ authors : Yun et. al.
+ year_published : 2019
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '.*__'
+     replacement : ~
+
+predicate : biolink:correlated_with
+
+object :
+ curie : MONDO:0013209
+
+attributes : 
+ p :
+   column_name : F
+ n  :
+   value : 298
+ relationship_strength : 
+  column_name : D
+ relationship_type : 
+   value : zero-inflated_gaussian_mixture_model
+ p_correction_method : 
+   value : bonferroni
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 4
+     last_line : 4
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 10
+     last_line : 10
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 16
+     last_line : 21
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 25
+     last_line : 27
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 31
+     last_line : 41
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 47
+     last_line : 51
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 55
+     last_line : 58
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/2Yun2019.xlsx
+     first_line : 62
+     last_line : 76
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s002.xlsx
+   method_notes : "Significant taxa in blood microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 4 
+     last_line : 5
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 9
+     last_line : 10
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 14
+     last_line : 15
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx 
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 20
+     last_line : 27
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 31
+     last_line : 40
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."
+ - data_location :
+     path_to_file : downloads/1Yun2019.xlsx
+     first_line : 44
+     last_line : 47
+   provenance :
+     table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6417675/bin/pone.0213692.s001.xlsx
+   method_notes : "Significant taxa in fecal microbiota related with NAFLD groups. Both unadjusted and adjusted P-values are provided."

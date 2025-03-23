@@ -1,0 +1,48 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Full result of MR estimates for the association between gut microbiota and FI"
+
+data_location :
+ path_to_file : downloads/4wang2024.xlsx
+ sheet_to_use : Supplementary Table 4
+ first_line : 3
+ last_line : 23
+
+provenance : 
+ publication : 'PMC:PMC11089315'
+ publication_name : "Genetically supported causality between gut microbiota and frailty: a two-sample Mendelian randomization study"
+ authors : Wang et. al.
+ year_published : 2024
+ journal : 'Frontiers in Microbiology'
+ table_url : https://www.frontiersin.org/api/v3/articles/1324209/file/Table_2.XLSX/1324209_supplementary-materials_tables_2_xlsx/1
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:affects
+
+object :
+ value: "frailty"
+
+attributes : 
+ p :
+   column_name : H
+ n :
+   value : 193566
+ relationship_strength : 
+   value : not applicable
+ relationship_type : 
+   column_name : C
+ p_correction_method : 
+   value : not applicable
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

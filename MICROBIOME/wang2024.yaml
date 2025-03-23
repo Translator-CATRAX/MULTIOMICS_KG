@@ -1,0 +1,168 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+method_notes : "Partial Spearman's correlations between species abundances and metabolic variables."
+
+data_location :
+ path_to_file : downloads/Wang2023.xlsx
+ sheet_to_use : STable7
+ first_line : 5
+ last_line : 207
+
+provenance : 
+ publication : 'PMID:38844795'
+ publication_name : 'Divergent age-associated and metabolism-associated gut microbiome signatures modulate cardiovascular disease risk'
+ journal : Nature Medicine
+ authors : Wang et. al.
+ year_published : 2024
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41591-024-03038-y/MediaObjects/41591_2024_3038_MOESM2_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+
+predicate : biolink:associated_with
+
+object :
+
+attributes : 
+ n  :
+   value : 2929
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - object : 
+     value : Cholesterol
+   attributes : 
+     p :
+       column_name : D
+     relationship_strength :
+       column_name : B
+ - object : 
+     value : LDL Cholesterol
+   attributes : 
+     p :
+       column_name : G
+     relationship_strength :
+       column_name : E
+ - object : 
+     value : Apolipoprotein B
+   attributes : 
+     p :
+       column_name : J
+     relationship_strength :
+       column_name : H
+ - object : 
+     value : Body Mass Index
+   attributes : 
+     p :
+       column_name : M
+     relationship_strength :
+       column_name : K
+ - object : 
+     value : Waist circumference
+   attributes : 
+     p :
+       column_name : P
+     relationship_strength :
+       column_name : 'N'
+ - object : 
+     value : Glucose measurment
+   attributes : 
+     p :
+       column_name : S
+     relationship_strength :
+       column_name : Q
+ - object : 
+     value : Fasting insulin
+   attributes : 
+     p :
+       column_name : V
+     relationship_strength :
+       column_name : T
+ - object : 
+     value : HOMA-IR
+   attributes : 
+     p :
+       column_name : 'Y'
+     relationship_strength :
+       column_name : W
+ - object : 
+     value : Systolic blood pressure
+   attributes : 
+     p :
+       column_name : AB
+     relationship_strength : 
+       column_name : Z
+ - object : 
+     value : Diastolic blood pressure
+   attributes : 
+     p :
+       column_name : AE
+     relationship_strength :
+       column_name : AC
+ - object : 
+     value : Triglycerides
+   attributes : 
+     p :
+       column_name : AH
+     relationship_strength :
+       column_name : AF
+ - object : 
+     value : HDL Cholesterol
+   attributes : 
+     p :
+       column_name : AK
+     relationship_strength :
+       column_name : AI
+ - object : 
+     value : Aspartate transferase
+   attributes : 
+     p :
+       column_name : BF
+     relationship_strength :
+       column_name : BD
+ - object : 
+     value : Uric Acid
+   attributes : 
+     p :
+       column_name : BI
+     relationship_strength :
+       column_name : BG
+ - object : 
+     value : Alanine transaminase
+   attributes : 
+     p :
+       column_name : BC
+     relationship_strength : 
+       column_name : BA
+ - object : 
+     value : Estimated glomerular filtration rate
+   attributes : 
+     p :
+       column_name : BL
+     relationship_strength :
+       column_name : BJ
+ - object : 
+     value : ApoB/ApoA1 ratio
+   attributes : 
+     p :
+       column_name : AN
+     relationship_strength :
+       column_name : AL

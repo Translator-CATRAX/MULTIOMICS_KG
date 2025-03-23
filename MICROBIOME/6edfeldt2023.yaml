@@ -1,0 +1,64 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+method_notes : "Pathway enrichment analysis for the differentially expressed genes across the luminal samples"
+
+data_location :
+ path_to_file : downloads/6Edfeldt2023.xlsx
+
+provenance : 
+ publication : 'PMC:PMC10064689'
+ publication_name : Distinct cervical tissue-adherent and luminal microbiome communities correlate with mucosal host gene expression and protein levels in Kenyan sex workers
+ authors : Edfeldt et. al.
+ year_published : 2024
+ journal : 'Microbiome'
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/10064689/bin/40168_2023_1502_MOESM2_ESM.zip
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : ".*GO_"
+     replacement : ~
+   - pattern : "_"
+     replacement : " "
+
+predicate : biolink:associated_with
+
+object :
+ value_column_name : K
+ explode_column : ';'
+ expected_classes :
+   - biolink:Gene
+ expected_taxa :
+   - NCBITaxon:9606
+
+attributes : 
+ p :
+   column_name : J
+ n  :
+   column_name : B
+ relationship_strength : 
+  column_name : H
+ relationship_type : 
+   value : genewise_negative_binomial_generalized_linear_model
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     sheet_to_use : GO_gene_module_4
+     first_line : 2
+     last_line : 82
+ - data_location :
+     sheet_to_use : GO_gene_module_6
+     first_line : 2
+     last_line : 47

@@ -1,0 +1,55 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Correlation analysis between microbial composition and 13C-tamoxifen abundance after FDR correction."
+
+data_location :
+ path_to_file : downloads/alam2024.xlsx
+ sheet_to_use : all correlations
+ first_line : 2
+ last_line : 232
+
+provenance : 
+ publication : 'PMC:PMC11708054'
+ publication_name : "Variation in human gut microbiota impacts tamoxifen pharmacokinetics"
+ authors : Alam et. al.
+ year_published : 2024
+ journal : mBio
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/11708054/bin/mbio.01679-24-s0006.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements : 
+   - pattern : ".*;g__"
+     replacement : ~
+   - pattern : ";s__"
+     replacement : " "
+   - pattern : "sp"
+     replacement : "sp. "
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:correlated_with
+
+object :
+ curie : CHEBI:41774
+
+attributes : 
+ p :
+   column_name : C
+ n :
+   value : 9
+ relationship_strength : 
+  column_name : B
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : benjamin_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

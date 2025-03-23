@@ -1,0 +1,60 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+method_notes : "Pairs of microbes and targeted metabolites with significant spearman correlations at q-value < 0.05 with their correlation values for each time point."
+
+data_location :
+ path_to_file : downloads/Nguyen2021.xlsx
+
+provenance : 
+ publication : 'PMC:PMC8400760'
+ publication_name : Associations between the gut microbiome and metabolome in early life
+ journal : BMC Microbiology
+ authors : Nguyen et. al.
+ year_published : 2021
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/8400760/bin/12866_2021_2282_MOESM2_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:OrganismTaxon
+
+predicate : biolink:correlated_with
+
+object :
+ value_column_name : B
+
+attributes : 
+ p :
+   column_name : D
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     sheet_to_use : sig_corr_tar_6W
+     first_line : 2
+     last_line : 259
+   attributes :
+     n :
+       value : 158
+ - data_location :
+     sheet_to_use : sig_corr_tar_12M
+     first_line : 2
+     last_line : 215
+   attributes :
+     n :
+       value : 262

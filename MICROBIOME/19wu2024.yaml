@@ -1,0 +1,59 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Sex-associated genus identified by MaAsLin in the males and females of 613 healthy individuals."
+
+data_location :
+ path_to_file : downloads/2024Wu.xlsx
+ sheet_to_use : Table S19
+ first_line : 4
+ last_line : 100
+
+provenance : 
+ publication : 'PMC:PMC11224521'
+ publication_name : 'Age over sex: evaluating gut microbiota differences in healthy Chinese populations'
+ journal : Frontiers in Microbiology
+ authors : Wu et. al.
+ year_published : 2024
+ table_url : https://ndownloader.figstatic.com/collections/7296079/versions/1
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '^.*?\.'
+     replacement : ~
+   - pattern : '\..*$'
+     replacement : ~
+   - pattern : '_.+$'
+     replacement : ~
+   - pattern : '7'
+     replacement : ~
+   - pattern : 'Family'
+     replacement : ~
+
+predicate : biolink:associated_with
+
+object :
+ value : Females
+
+attributes : 
+ p :
+   column_name : I
+ n  :
+   value : 613
+ relationship_strength : 
+  column_name : E
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : 'not_applicable'
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

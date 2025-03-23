@@ -1,0 +1,55 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Detailed information of the 14 differential genus identified by Wilcox test in the Atherosclerotic Cardiovascular Disease group"
+
+data_location :
+ path_to_file : downloads/3su2024.xlsx
+ sheet_to_use : table3
+ first_line : 3
+ last_line : 16
+
+provenance : 
+ publication : 'PMC:PMC11705818'
+ publication_name : Gut mycobiome alterations and network interactions with the bacteriome in patients with atherosclerotic cardiovascular disease
+ authors : Su et. al.
+ year_published : 2024
+ journal : Microbiology Spectrum
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/11705818/bin/spectrum.02182-24-s0003.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : "f__"
+     replacement : ~
+   - pattern : "_g"
+     replacement : ~
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value: Atherosclerotic cardiovascular disease
+ expected_classes :
+   - biolink:Disease
+
+attributes : 
+ p :
+   column_name : E
+ n :
+   value : 385
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : Wilcoxon rank-sum test
+ p_correction_method : 
+   value : benjamini hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

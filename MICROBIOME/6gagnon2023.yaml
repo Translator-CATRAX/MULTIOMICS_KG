@@ -1,0 +1,94 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Robust Mendelian randomization results and associated statistics."
+
+data_location :
+ path_to_file : downloads/Gagnon2023.xlsx
+ sheet_to_use : Supplementary Table 6
+ first_line : 2
+ last_line : 282
+
+provenance : 
+ publication : 'doi:10.1186/s12967-022-03799-5'
+ publication_name : 'Impact of the gut microbiota and associated metabolites on cardiometabolic traits, chronic diseases and human longevity: a Mendelian randomization study'
+ journal : 'Journal of Translational Medicine'
+ authors : Gagnon et. al.
+ year_published : 2023
+ table_url : https://static-content.springer.com/esm/art%3A10.1186%2Fs12967-022-03799-5/MediaObjects/12967_2022_3799_MOESM1_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : E
+ regex_replacements :
+   - pattern : .*_ 
+     replacement : ~
+   - pattern : .*\- 
+     replacement : ~
+   - pattern : '\)'
+     replacement : ~
+   - pattern : id.*
+     replacement : ~
+   - pattern : "class" 
+     replacement : ~
+   - pattern : "family" 
+     replacement : ~
+   - pattern : "genus" 
+     replacement : ~
+   - pattern : "order" 
+     replacement : ~
+   - pattern : "phylum" 
+     replacement : ~
+   - pattern : '\.' 
+     replacement : ~
+   - pattern : 'levels' 
+     replacement : ~
+
+predicate : biolink:affects
+
+object :
+ value_column_name : D
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+   - pattern : "Jansen"
+     replacement : ~
+   - pattern : "Jansen "
+     replacement : ~
+   - pattern : "van der Harst "
+     replacement : ~
+   - pattern : "Malik "
+     replacement : ~
+   - pattern : "Howard "
+     replacement : ~
+   - pattern : "Stanzick eGFR"
+     replacement : Estimated glomerular filtration rate
+   - pattern : "Deelen "
+     replacement : ~
+   - pattern : "Mahajan "
+     replacement : ~
+ expected_classes :
+  - biolink:Protein
+  - biolink:ClinicalFinding
+  - biolink:ChemicalEntitiy
+  - biolink:PhenotypicFeature
+  - biolink:Disease
+
+attributes : 
+ p :
+   column_name : J
+ n  :
+   value : 142204
+ relationship_strength : 
+  column_name : H
+ relationship_type : 
+   column_name : F
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

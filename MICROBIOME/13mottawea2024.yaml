@@ -1,0 +1,51 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+method_notes : "Table S13. Total number of DEGs with significant (padj ≤ 0.05) expression differences between conditions MEVs treated vs Control (non-treated). Relationship Strengh a log2FoldChange"
+
+data_location :
+ path_to_file : downloads/13mottawea2024.xlsx
+ sheet_to_use : Table S13
+ first_line : 3
+ last_line : 149
+
+provenance : 
+ publication : 'PMC:PMC11792502'
+ publication_name : "Multi-level analysis of gut microbiome extracellular vesicles-host interaction reveals a connection to gut-brain axis signaling"
+ authors : Mottawea et. al.
+ year_published : 2024
+ journal : 'Microbiology Spectrum'
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/11792502/bin/spectrum.01368-24-s0002.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes : 
+   - biolink:Gene
+ expected_taxa :
+   - NCBITaxon:9606
+
+predicate : biolink:associated_with
+
+object :
+ value : extracellular vesicles
+
+attributes : 
+ p :
+   column_name : G
+ n :
+   value : 12
+ relationship_strength : 
+   column_name : D 
+ relationship_type : 
+   value : spearman correlation
+ p_correction_method : 
+   value : not applicable
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

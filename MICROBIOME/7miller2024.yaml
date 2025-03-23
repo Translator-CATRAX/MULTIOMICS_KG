@@ -1,0 +1,60 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "List of 127 bacterial species that differed significantly between aged-care residents and non-elderly individuals with urinary tract infections"
+
+data_location :
+ path_to_file : downloads/7Miller2024.xlsx
+ sheet_to_use : Supplementary Data 3
+
+provenance : 
+ publication : 'doi:10.1038/s43856-024-00583-y'
+ publication_name : 'Intestinal microbiology and urinary tract infection associated risk in long-term aged care residents'
+ journal : Communications Medicine
+ authors : Miller et. al.
+ year_published : 2024
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs43856-024-00583-y/MediaObjects/43856_2024_583_MOESM9_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value : urinary tract infection
+ expected_classes:
+   - biolink:Disease
+
+attributes : 
+ p :
+   column_name : D
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : linear_discriminant_analysis
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - data_location :
+     first_line : 2
+     last_line : 66
+   attributes :
+     n :
+       value : 123
+ - data_location :
+     first_line : 67
+     last_line : 128
+   attributes :
+     n :
+       value : 20

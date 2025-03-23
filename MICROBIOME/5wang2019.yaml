@@ -1,0 +1,141 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+ - MESH:D020543
+
+method_notes : "Cross associations among microbiome (9 microbiome genera and Shannon diversity), host transcriptome (9 tPCs) and proteome (8 pPCs) data both across all samples and within stable samples in the multivariate analysis. FDR P-values are indicated in the table."
+
+data_location :
+ path_to_file : downloads/5wang2019.xlsx
+ first_line : 3
+
+provenance : 
+ publication : 'PMC:PMC6555748'
+ publication_name : "Airway host-microbiome interactions in chronic obstructive pulmonary disease"
+ authors : Wang et. al.
+ year_published : 2019
+ journal : Respiratory Research
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/6555748/bin/12931_2019_1085_MOESM5_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+predicate : biolink:associated_with
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:Gene
+ expected_taxa :
+   - NCBITaxon:9606
+
+attributes : 
+ n :
+   value : 59
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+ relationship_type :
+   value : spearman_correlation
+
+sections :
+ - data_location :
+     sheet_to_use : A. Th1 and Th2 pathway
+     last_line : 57
+   object :
+     value : Haemophilus
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : C
+    relationship_strength :
+     column_name : D
+ - data_location :
+     sheet_to_use : A. Th1 and Th2 pathway
+     last_line : 57
+   object :
+     value : Haemophilus influenzae
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : F
+    relationship_strength :
+     column_name : E
+ - data_location :
+     sheet_to_use : A. IL12 pathway
+     last_line : 62
+   object :
+     value : Haemophilus
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : C
+    relationship_strength :
+     column_name : D
+ - data_location :
+     sheet_to_use : A. IL12 pathway
+     last_line : 62
+   object :
+     value : Haemophilus influenzae
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : F
+    relationship_strength :
+     column_name : E
+ - data_location :
+     sheet_to_use : B. IFN alpha beta pathway
+     last_line : 59
+   object :
+     value : Moraxella
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : C
+    relationship_strength :
+     column_name : D
+ - data_location :
+     sheet_to_use : B. IFN alpha beta pathway
+     last_line : 59
+   object :
+     value : Moraxella catarrhalis
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : F
+    relationship_strength :
+     column_name : E
+ - data_location :
+     sheet_to_use : B. antigen presentation pathway
+     last_line : 69
+   object :
+     value : Moraxella
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : C
+    relationship_strength :
+     column_name : D
+ - data_location :
+     sheet_to_use : B. antigen presentation pathway
+     last_line : 69
+   object :
+     value : Moraxella catarrhalis
+     expected_classes :
+       - biolink:OrganismTaxon
+   attributes :
+    p : 
+     column_name : F
+    relationship_strength :
+     column_name : E

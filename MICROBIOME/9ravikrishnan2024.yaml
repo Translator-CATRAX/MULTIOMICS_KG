@@ -1,0 +1,107 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+method_notes : "Age corrected species-level associations between taxa and clinical parameters + frailty measures"
+
+data_location :
+ path_to_file : downloads/9Ravikrishnan.xlsx
+ first_line : 3
+ last_line : 161
+
+provenance : 
+ publication : 'PMC:PMC11377447'
+ publication_name : Gut metagenomes of Asian octogenarians reveal metabolic potential expansion and distinct microbial species associated with aging phenotypes
+ journal : Nature Communications
+ year_published : 2024
+ authors : Ravikrishnan et. al.
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-024-52097-9/MediaObjects/41467_2024_52097_MOESM9_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+attributes : 
+ p :
+   column_name : E
+ n :
+   value : 234
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : Generalized Linear Model
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - object :
+     value : "Fasting blood glucose"
+   data_location :
+     sheet_to_use : "Fasting blood glucose"
+ - object :
+     value : "Triglycerides"
+   data_location :
+     sheet_to_use : "Triglycerides"
+ - object :
+     value : "Cholesterol"
+   data_location :
+     sheet_to_use : "Total Cholesterol"
+ - object :
+     value : "HDL Cholesterol"
+   data_location :
+     sheet_to_use : "HDL"
+ - object :
+     value : "LDL Cholesterol"
+   data_location :
+     sheet_to_use : "LDL"
+ - object :
+     value : "hs-CRP"
+   data_location :
+     sheet_to_use : "hs-CRP"
+ - object :
+     value : "ALT"
+   data_location :
+     sheet_to_use : "ALT"
+ - object :
+     value : "Vitamin B12"
+   data_location :
+     sheet_to_use : "Vitamin B12"
+ - object :
+     value : "Right Handed"
+   data_location :
+     sheet_to_use : "Right Handgrip"
+ - object :
+     value : "Left Handed"
+   data_location :
+     sheet_to_use : "Left Handgrip"
+ - object :
+     value : "Walking speed"
+   data_location :
+     sheet_to_use : "Gait speed"
+ - object :
+     value : "Folate"
+   data_location :
+     sheet_to_use : "Folate"
+ - object :
+     value : "MMSE"
+   data_location :
+     sheet_to_use : "MMSE"
+ - object :
+     value : "Sleep"
+   data_location :
+     sheet_to_use : "Sleep"
+ - object :
+     value : "Thyroxine"
+   data_location :
+     sheet_to_use : "Free Thyroxine"

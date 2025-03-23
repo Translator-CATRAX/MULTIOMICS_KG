@@ -1,0 +1,56 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Significant negative correlations of abundances of genera pairs. Correlations were tested with Pearson correlation. The false discovery rate was adjusted for with Benjamini-Hochberg adjustment."
+
+data_location :
+ path_to_file : downloads/Hill2017.xlsx
+ sheet_to_use : Supplementary Table 18
+ first_line : 3
+ last_line : 18
+
+provenance : 
+ publication : 'PMC:PMC5240274'
+ publication_name : "Evolution of gut microbiota composition from birth to 24 weeks in the INFANTMET Cohort"
+ authors : Hill et. al.
+ year_published : 2023
+ journal : Microbiology Spectrum
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/5240274/bin/40168_2016_213_MOESM1_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+predicate : biolink:correlated_with
+
+subject :
+ shared_value_column : A
+ regex_replacements :
+   - pattern : " - .*"
+     replacement : ""
+ expected_classes :
+   - biolink:OrganismTaxon
+
+object :
+ shared_value_column : A
+ regex_replacements :
+   - pattern : ".* - "
+     replacement : ""
+ expected_classes :
+   - biolink:OrganismTaxon
+
+attributes : 
+ p :
+   column_name : D
+ n :
+   value : 192
+ relationship_strength : 
+  column_name : B
+ relationship_type : 
+   value : spearman correlation
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

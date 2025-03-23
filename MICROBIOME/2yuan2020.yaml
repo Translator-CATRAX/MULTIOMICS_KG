@@ -1,0 +1,87 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D055442
+
+data_location :
+ path_to_file : downloads/2yuan2020.xlsx
+
+provenance : 
+ publication : 'PMC:PMC7253361'
+ publication_name : "Mucosal Microbiota and Metabolome along the Intestinal Tract Reveal a Location-Specific Relationship"
+ authors : Yuan et. al.
+ year_published : 2020
+ journal : mSystems
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/7253361/bin/mSystems.00055-20-st002.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+ expected_classes :
+   - biolink:OrganismTaxon
+
+object :
+ value_column_name : B
+
+attributes : 
+ p :
+   column_name : E
+ n :
+   value : 10
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : spearman correlation
+ p_correction_method : 
+   value : unspecified
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - data_location :
+     sheet_to_use : Small Intestine
+     first_line : 2
+     last_line : 596
+   method_notes : "Spearman’s correlation results for microbiota-metabolome interactions in the small intestine"
+   reindex :
+     - mode : not_equal_to
+       column : F
+       value : negative
+   predicate : biolink:positively_correlated_with
+ - data_location :
+     sheet_to_use : Small Intestine
+     first_line : 2
+     last_line : 596
+   method_notes : "Spearman’s correlation results for microbiota-metabolome interactions in the small intestine"
+   reindex :
+     - mode : not_equal_to
+       column : F
+       value : positive
+   predicate : biolink:negatively_correlated_with
+ - data_location :
+     sheet_to_use : Large Intestine
+     first_line : 2
+     last_line : 167
+   method_notes : "Spearman’s correlation results for microbiota-metabolome interactions in the large intestine"
+   reindex :
+     - mode : not_equal_to
+       column : F
+       value : negative
+   predicate : biolink:positively_correlated_with
+ - data_location :
+     sheet_to_use : Large Intestine
+     first_line : 2
+     last_line : 167
+   method_notes : "Spearman’s correlation results for microbiota-metabolome interactions in the large intestine"
+   reindex :
+     - mode : not_equal_to
+       column : F
+       value : positive
+   predicate : biolink:negatively_correlated_with

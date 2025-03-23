@@ -1,0 +1,90 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+data_location :
+ path_to_file : downloads/10Forsyth2024.xlsx
+
+provenance : 
+ publication : 'PMC:PMC10945560'
+ publication_name : 'Evidence that the loss of colonic anti-microbial peptides may promote dysbiotic Gram-negative inflammaging-associated bacteria in aging mice'
+ journal : 'Frontiers in Ageing'
+ authors : 'Forsyth et. al.'
+ year_published : 2024
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/10945560/bin/DataSheet10.XLSX
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes : 
+   - biolink:Gene
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '_Gn'
+     replacement : ~
+   - pattern : '_Gp'
+     replacement : ~
+   - pattern : '_'
+     replacement : " "
+ expected_taxa : 
+   - NCBITaxon:10090
+
+predicate : biolink:increases_ammount_or_activity_of
+
+object :
+ value_column_name : B
+ expected_classes : 
+   - biolink:Gene
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : '_Gn'
+     replacement : ~
+   - pattern : '_Gp'
+     replacement : ~
+   - pattern : '_'
+     replacement : " "
+ expected_taxa : 
+   - NCBITaxon:10090
+
+attributes : 
+ p :
+   column_name : E
+ relationship_strength : 
+  column_name : C
+ relationship_type : 
+   value : CLR_KW
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - data_location :
+     sheet_to_use : Inflam_SparCC_2-15_Mths
+     first_line : 4
+     last_line : 1130
+   attributes : 
+     n :
+       value : 11
+   method_notes : " Inflammation Genes and Bacterial Genera Correlation Outcomes between 2 Month- and 15-Month Old Mice Groups"
+ - data_location :
+     sheet_to_use : Inflam_SparCC_2-25_Mths
+     first_line : 4
+     last_line : 1833
+   attributes : 
+     n :
+       value : 11
+   method_notes : " Inflammation Genes and Bacterial Genera Correlation Outcomes between 2 Month- and 25-Month Old Mice Groups"
+ - data_location :
+     sheet_to_use : Inflam_SparCC_15-25_Mths
+     first_line : 4
+     last_line : 1773
+   attributes : 
+     n :
+       value : 12
+   method_notes : " Inflammation Genes and Bacterial Genera Correlation Outcomes between 15-Month- and 25-Month Old Mice Groups"

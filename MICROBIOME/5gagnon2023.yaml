@@ -1,0 +1,70 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Primary Mendelian randomization results and associated statistics."
+
+data_location :
+ path_to_file : downloads/Gagnon2023.xlsx
+ sheet_to_use : Supplementary Table 5
+ first_line : 2
+ last_line : 1218
+
+provenance : 
+ publication : 'doi:10.1186/s12967-022-03799-5'
+ publication_name : 'Impact of the gut microbiota and associated metabolites on cardiometabolic traits, chronic diseases and human longevity: a Mendelian randomization study'
+ journal : 'Journal of Translational Medicine'
+ authors : Gagnon et. al.
+ year_published : 2023
+ table_url : https://static-content.springer.com/esm/art%3A10.1186%2Fs12967-022-03799-5/MediaObjects/12967_2022_3799_MOESM1_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : C
+ regex_replacements :
+   - pattern : 'Pathway PWY-5022' 
+     replacement : ~
+   - pattern : .*\-  
+     replacement : ~
+   - pattern : '\)'
+     replacement : ~
+   - pattern : id.*
+     replacement : ~
+   - pattern : "class" 
+     replacement : ~
+   - pattern : "family" 
+     replacement : ~
+   - pattern : "genus" 
+     replacement : ~
+   - pattern : "order" 
+     replacement : ~
+   - pattern : "phylum" 
+     replacement : ~
+   - pattern : '\.' 
+     replacement : ~
+
+predicate : biolink:affects
+
+object :
+ value_column_name : D
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+
+attributes : 
+ p :
+   column_name : I
+ n  :
+   value : 142204
+ relationship_strength : 
+  column_name : G
+ relationship_type : 
+   column_name : E
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

@@ -1,0 +1,60 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Significant (FDR < 0.1), meta-analysed Spearman correlations between the arcsine-transformed relative abundances of each SGB within each individual and amount of meat (red and white), dairy products, fruits and vegetables consumed. pval.random, P value for test of overall effect of random-effects model. TE.random, estimated overall effect of random-effects model. seTE.random, standard error of fixed effect model. lower.random and upper.random, lower and upper confidence interval limits of random-effects model."
+
+data_location :
+ path_to_file : downloads/13fackelmann2025.xlsx
+ sheet_to_use : Supplementary Table 13
+ first_line : 2
+ last_line : 3366
+
+provenance : 
+ publication : 'PMC:PMC11726441'
+ publication_name : "Gut microbiome signatures of vegan, vegetarian and omnivore diets and associated health outcomes across 21,561 individuals"
+ authors : Fackelmann et. al.
+ year_published : 2024
+ journal : 'Nature Microbiology'
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41564-024-01870-z/MediaObjects/41564_2024_1870_MOESM4_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : '\..*'
+     replacement : ~
+   - pattern : 's__'
+     replacement : ~
+   - pattern : '_'
+     replacement : " "
+ expected_classes :
+   - biolink:OrganismTaxon
+
+predicate : biolink:associated_with
+
+object :
+ value_column_name : H
+ regex_replacements :
+   - pattern : "veg"
+     replacement : "vegetables"
+   - pattern : '_'
+     replacement : " "
+
+attributes : 
+ p :
+   column_name : G
+ n :
+   value : 21561
+ relationship_strength : 
+   value : not applicable
+ relationship_type : 
+   value : Spearman Correlation
+ p_correction_method : 
+   value : benjamini hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline

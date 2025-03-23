@@ -1,0 +1,68 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+
+method_notes : "Results from linear mixed effect modelling to regress the Euclidean distance between every pair of FC/CC and pre-treatment or during treatment samples against Time, Treatment and patient ID for the Longitudinal Observational Cohort."
+
+data_location :
+ path_to_file : downloads/Wipperman21.xlsx
+ sheet_to_use : Sheet1
+ first_line : 2
+ last_line : 1334
+
+provenance : 
+ publication : 'PMC:PMC7892575'
+ publication_name : Gastrointestinal microbiota composition predicts peripheral inflammatory state during treatment of human tuberculosis
+ journal : Nature Communications
+ authors : Wipperman et. al.
+ year_published : 2021
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/7892575/bin/41467_2021_21475_MOESM23_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : C
+ expected_classes : 
+   - biolink:OrganismTaxon
+ regex_replacements :
+   - pattern : "_"
+     replacement : " "
+   - pattern : \s\..*
+     replacement : ~
+
+object :
+ value_column_name : I
+ regex_replacements :
+   - pattern : "HALLMARK_"
+     replacement : ~
+   - pattern : "_"
+     replacement : " "
+
+attributes : 
+ p :
+   column_name : B
+ n  :
+   value : 55 
+ relationship_strength : 
+  column_name : A
+ relationship_type : 
+   value : linear_mixed_effect_movel
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections :
+ - predicate : biolink:positively_associated_with
+   reindex : 
+     - mode: not_equal_to
+       column: E
+       value : "Negative"
+ - predicate : biolink:negatively_associated_with
+   reindex : 
+     - mode: not_equal_to
+       column: E
+       value : "Positive"

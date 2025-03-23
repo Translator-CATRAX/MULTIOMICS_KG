@@ -1,0 +1,52 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D000069196
+ - MESH:D016678
+
+method_notes : "Gut microbial functional genes based on KEGG orthology between COVID-19 and controls"
+
+data_location :
+ path_to_file : downloads/Nagata2023.xlsx
+ sheet_to_use : S10
+ first_line : 3
+ last_line : 6048
+
+provenance : 
+ publication : 'PMC:PMC9499989'
+ publication_name : Human Gut Microbiota and Its Metabolites Impact Immune Responses in COVID-19 and Its Complications
+ journal : Nature Communications
+ authors : Nagata et. al.
+ year_published : 2023
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/9499989/bin/mmc2.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ regex_replacements :
+   - pattern : '.*; '
+     replacement : ~
+   - pattern : ' \[.*'
+     replacement : ~
+
+predicate : biolink:associated_with
+
+object :
+  value : COVID-19
+
+attributes : 
+ n :
+   value : 224
+ p :
+   column_name : E
+ relationship_strength :
+   column_name : C
+ relationship_type : 
+   value : wilcoxon_rank_sum_test
+ p_correction_method : 
+   value : "unspecified"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
