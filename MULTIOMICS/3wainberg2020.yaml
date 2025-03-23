@@ -1,0 +1,66 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D055442
+ - MESH:D016678
+
+method_notes : "We obtained 219 protein–PRS, 259 metabolite–PRS, and 288 clinical lab–PRS correlations at a false discovery rate (FDR) of 10%, for a total of 766 significant analyte–PRS correlations."
+
+data_location :
+ path_to_file : downloads/wainberg2020.xlsx
+ first_line : 2
+
+provenance : 
+ publication : 'PMC:PMC7474629'
+ publication_name : Multiomic blood correlates of genetic risk identify presymptomatic disease alterations
+ journal : PNAS
+ authors : Wainberg et. al.
+ year_published : 2020
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/7474629/bin/pnas.2001429117.sd03.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ fill_values : bfill
+
+predicate : biolink:correlated_with
+
+object :
+ value_column_name : B
+
+attributes : 
+ p :
+   column_name : E
+ relationship_strength :
+   column_name : C
+ n :
+   value : 4905
+ relationship_type : 
+   value : linear_regression
+ p_correction_method : 
+   value : FDR_of_10_percent
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - data_location :
+     sheet_to_use : "Clinical labs, by disease"
+     last_line : 289
+ - data_location :
+     sheet_to_use : "Clinical labs, by analyte"
+     last_line : 289
+ - data_location :
+     sheet_to_use : "Metabolomics, by disease"
+     last_line : 260
+ - data_location :
+     sheet_to_use : "Metabolomics, by analyte"
+     last_line : 260
+ - data_location :
+     sheet_to_use : "Proteomics, by disease"
+     last_line : 220
+ - data_location :
+     sheet_to_use : "Metabolomics, by analyte"
+     last_line : 219

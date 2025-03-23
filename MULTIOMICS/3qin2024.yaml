@@ -1,0 +1,64 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D016678
+
+method_notes : "Our result shows most of the drugs show the best model accuracy based on the feature sets that include the relative gene expression guided by the KG in the independent test dataset Beat AML wave 3/4"
+
+data_location :
+ path_to_file : downloads/3qin2023.xlsx
+ sheet_to_use : "Sheet1"
+ first_line : 2
+ last_line : 295137
+
+provenance : 
+ publication : 'doi:/10.5281/zenodo.12773035'
+ publication_name : Knowledge graphs facilitate prediction of drug response for acute myeloid leukemia
+ journal : iScience
+ authors : Qin et. al.
+ year_published : 2023
+ table_url : https://www.cell.com/cms/10.1016/j.isci.2024.110755/attachment/97bb1667-5cc9-423a-8dd5-145ae12213d4/mmc3.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject : 
+ curie_column_name : A
+ prefix :
+   - prefix : "ENSEMBL:"
+ expected_taxa : 
+   - NCBITaxon:9606
+
+object :
+ value_column_name : B
+ expected_classes:
+   - biolink:Gene
+ expected_taxa : 
+   - NCBITaxon:9606
+
+attributes : 
+ p :
+   value : "not_applicable"
+ relationship_strength :
+   column_name : C
+ n :
+   value : 969
+ relationship_type : 
+   value : LASSO_regression
+ p_correction_method : 
+   value : "not_applicable"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - reindex :
+     - mode : greater_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_resistance_to
+ - reindex :
+     - mode : less_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_sensitivity_to

@@ -1,0 +1,77 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D016678
+
+data_location :
+ path_to_file : downloads/durazo2023.xlsx
+
+provenance : 
+ publication : PMC:PMC10349864
+ publication_name : Regional genetic correlations highlight relationships between neurodegenerative disease loci and the immune system
+ journal : Communications Biology
+ authors : Durazo et. al.
+ year_published : 2023
+ table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/10349864/bin/42003_2023_5113_MOESM4_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ prefix :
+   - prefix : "ENSEMBL:"
+
+predicate : biolink:correlated_with
+
+object :
+ value_column_name : H
+ expected_classes:
+   - biolink:Disease
+ regex_replacements :
+   - pattern : '_.*'
+     replacement : ~
+   - pattern : 'CD'
+     replacement : "Crohns disease"
+   - pattern : 'UC'
+     replacement : Ulcerative colitis
+   - pattern : SCZ
+     replacement : Schizophrenia
+   - pattern : MS 
+     replacement : Multiple sclerosis
+   - pattern : AD 
+     replacement : Alzheimers disease
+   - pattern : LBD 
+     replacement : Lewy body dementia
+   - pattern : PD
+     replacement : Parkinsons disease
+
+attributes : 
+ p :
+   column_name : P
+ relationship_strength :
+   column_name : J
+ n :
+   column_name : G
+ relationship_type : 
+   value : spearman_correlation
+ p_correction_method : 
+   value : 'FDR_correction'
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - subject :
+     curie_column_name : A
+   data_location :
+     sheet_to_use : Supplementary_Data_2
+     first_line : 3
+     last_line : 368
+   method_notes : "We performed 1628 pair-wise correlations across 2553 significantly expressed genes in at least one cell type, which resulted in 366 significant correlations (FDR < 0.01)"
+ - subject :
+     curie_column_name : B
+   data_location :
+     sheet_to_use : Supplementary_Data_5
+     first_line : 3
+     last_line : 190
+   method_notes : "We performed a total of 1863 bivariate tests between diseases and protein levels. We considered a significant regional correlation if FDR < 0.01. We observed significant correlations between protein levels and all diseases, except FTD. PD had a higher number of significant correlations, compared to other tested diseases"

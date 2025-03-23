@@ -1,0 +1,60 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D016678
+
+method_notes : "Associations between the mutated gene and drug sensitivity for all significant results"
+
+data_location :
+ path_to_file : downloads/9qin2024.xlsx
+ sheet_to_use : "TableS9 Drug-gene-asso"
+ first_line : 2
+ last_line : 773
+
+provenance : 
+ publication : PMC:PMC11176916
+ publication_name : Mutation Patterns Predict Drug Sensitivity in Acute Myeloid Leukemia
+ journal : Clinical Cancer Research
+ authors : Qin et. al.
+ year_published : 2024
+ table_url : https://ndownloader.figstatic.com/files/47044431
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ expected_classes:
+   - biolink:Gene
+ expected_taxa : 
+   - NCBITaxon:9606
+
+object :
+ value_column_name : B
+ 
+attributes : 
+ p :
+   column_name : F
+ relationship_strength :
+   column_name : C
+ n :
+   value : 75
+ relationship_type : 
+   value : ranksum_test
+ p_correction_method : 
+   value : benjamini_hochberg
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - reindex :
+     - mode : greater_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_resistance_to
+ - reindex :
+     - mode : less_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_sensitivity_to

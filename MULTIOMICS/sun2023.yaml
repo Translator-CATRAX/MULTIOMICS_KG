@@ -1,0 +1,399 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D020543
+ - MESH:D016678
+
+method_notes : "Proteomic associations with smoking, medication use, liver function, renal function and top 20 most prevalant diseases"
+
+data_location:
+ path_to_file: downloads/sun2023.xlsx
+ sheet_to_use: ST7
+ first_line: 6
+ last_line: 2945
+
+provenance:
+ publication: 'PMC:PMC10567551'
+ publication_name: 'Plasma proteomic associations with genetics and health in the UK Biobank'
+ journal: Nature
+ authors : Sun et. al.
+ year_published : 2023
+ table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/10567551/bin/41586_2023_6592_MOESM3_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject:
+  curie_column_name: "A"
+  regex_replacements :
+    - pattern: "^.*?:"
+      replacement : ~
+    - pattern: "(:[^:]*:[^:]*)$"
+      replacement : ~
+  prefix:
+     - prefix: "UniProtKB:"
+
+predicate: biolink:associated_with
+
+attributes :
+ n:
+   value: 54219
+ relationship_type: 
+   value: linear_regression
+ p_correction_method: 
+   value: "not_applicable"
+ knowledge_level: 
+   value: statistical_association
+ agent_type: 
+   value: data_analysis_pipeline
+
+sections:
+ - object: 
+     value: Smoking
+   attributes:
+     relationship_strength: 
+       column_name: "C"
+     p:
+       column_name: "E"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Medication use
+   attributes:
+     relationship_strength: 
+       column_name: "F"
+     p:
+       column_name: "H"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Hepatic necrosis
+   attributes:
+     relationship_strength: 
+       column_name: "I"
+     p:
+       column_name: "K"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0002050
+   attributes:
+     relationship_strength: 
+       column_name: "L"
+     p:
+       column_name: "N"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0001134
+   attributes:
+     relationship_strength: 
+       column_name: "O"
+     p:
+       column_name: "Q"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0005010
+   attributes:
+     relationship_strength: 
+       column_name: "R"
+     p:
+       column_name: "T"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Vincent's Disease
+   attributes:
+     relationship_strength: 
+       column_name: "U"
+     p:
+       column_name: "W"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Vasomotor and allergic rhinitis
+   attributes:
+     relationship_strength: 
+       column_name: "X"
+     p:
+       column_name: "Z"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Chronic rhinitis
+   attributes:
+     relationship_strength: 
+       column_name: "AA"
+     p:
+       column_name: "AC"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0004979
+   attributes:
+     relationship_strength: 
+       column_name: "AD"
+     p:
+       column_name: "AF"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0007186
+   attributes:
+     relationship_strength: 
+       column_name: "AG"
+     p:
+       column_name: "AI"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0004628
+   attributes:
+     relationship_strength: 
+       column_name: "AJ"
+     p:
+       column_name: "AL"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: MONDO:0005711
+   attributes:
+     relationship_strength: 
+       column_name: "AM"
+     p:
+       column_name: "AO"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Irritable bowel syndrome
+   attributes:
+     relationship_strength: 
+       column_name: "AP"
+     p:
+       column_name: "AR"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Other diseases of intestine
+   attributes:
+     relationship_strength: 
+       column_name: "AS"
+     p:
+       column_name: "AU"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Psoriasis
+   attributes:
+     relationship_strength: 
+       column_name: "AV"
+     p:
+       column_name: "AX"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Hypertensive heart and renal disease
+   attributes:
+     relationship_strength: 
+       column_name: "AY"
+     p:
+       column_name: "BA"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Acquired deformities of fingers and toes
+   attributes:
+     relationship_strength: 
+       column_name: "BB"
+     p:
+       column_name: "BD"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value: Other and unspecified disorders of joint
+   attributes:
+     relationship_strength: 
+       column_name: "BE"
+     p:
+       column_name: "BG"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     curie: HP:0003418
+   attributes:
+     relationship_strength: 
+       column_name: "BH"
+     p:
+       column_name: "BJ"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Other and unspecified disorders of soft tissue
+   attributes:
+     relationship_strength: 
+       column_name: "BK"
+     p:
+       column_name: "BM"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Other disease of urinary system
+   attributes:
+     relationship_strength: 
+       column_name: "BN"
+     p:
+       column_name: "BP"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Alanine aminotransferase measurement
+   attributes:
+     relationship_strength: 
+       column_name: "BQ"
+     p:
+       column_name: "BS"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Aspartate aminotransferase measurement
+   attributes:
+     relationship_strength: 
+       column_name: "BT"
+     p:
+       column_name: "BV"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no
+ - object: 
+     value : Glomerular Filtration Rate 
+   attributes:
+     relationship_strength: 
+       column_name: "BW"
+     p:
+       column_name: "BY"
+       math:
+         - operation: copysign
+           parameter: '-1'
+           order_last: yes
+         - operation: pow
+           parameter: '10'
+           order_last: no

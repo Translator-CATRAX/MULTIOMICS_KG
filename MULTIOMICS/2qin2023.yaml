@@ -1,0 +1,71 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D016678
+
+method_notes : "Gene expression —drug associations identified in LASSO regression models, related to STAR Methods"
+
+data_location :
+ path_to_file : downloads/2qin2023.xlsx
+
+provenance : 
+ publication : 'doi:/10.5281/zenodo.12773035'
+ publication_name : Knowledge graphs facilitate prediction of drug response for acute myeloid leukemia
+ journal : iScience
+ authors : Qin et. al.
+ year_published : 2023
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : A
+ regex_replacements :
+   - pattern : '\s*\(.*'
+     replacement : ~
+
+object :
+ curie_column_name : B
+ prefix :
+   - prefix : "ENSEMBL:"
+ expected_taxa : 
+   - NCBITaxon:9606
+
+attributes : 
+ p :
+   value : "not_applicable"
+ relationship_strength :
+   column_name : D
+ n :
+   value : 969
+ relationship_type : 
+   value : LASSO_regression
+ p_correction_method : 
+   value : "not_applicable"
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - reindex :
+     - mode : greater_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_resistance_to
+   data_location :
+    sheet_to_use : "Sheet1"
+    first_line : 2
+    last_line : 6802
+   provenance :
+     table_url : https://www.cell.com/cms/10.1016/j.isci.2024.110755/attachment/1dbd3e58-41b8-4020-9302-44ea0a08590f/mmc2.xlsx
+ - reindex :
+     - mode : less_than_or_equal_to
+       column : relationship_strength
+       value : 0
+   predicate : biolink:associated_with_sensitivity_to
+   data_location :
+    sheet_to_use : "Sheet1"
+    first_line : 2
+    last_line : 6802
+   provenance :
+     table_url : https://www.cell.com/cms/10.1016/j.isci.2024.110755/attachment/1dbd3e58-41b8-4020-9302-44ea0a08590f/mmc2.xlsx

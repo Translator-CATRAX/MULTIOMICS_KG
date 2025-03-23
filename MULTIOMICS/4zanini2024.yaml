@@ -1,0 +1,74 @@
+column_style : "alphabetic"
+
+domain : 
+ - MESH:D020543
+
+method_notes : " Predictive performance of protein-based model compared to benchmark patient information models."
+
+data_location :
+ path_to_file : downloads/4zanini2024.xlsx
+ sheet_to_use : Supplementary Table 4
+ first_line : 5
+ last_line : 222
+
+provenance : 
+ publication : "doi:10.1038/s41591-024-03142-z"
+ publication_name : 'Proteomic signatures improve risk prediction for common and rare diseases'
+ journal : Nature Medicine
+ authors : Carrasco-Zanini et. al.
+ year_published : 2024
+ table_url : https://static-content.springer.com/esm/art%3A10.1038%2Fs41591-024-03142-z/MediaObjects/41591_2024_3142_MOESM3_ESM.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ expected_classes :
+   - biolink:Protein
+ explode_column : ','
+ regex_replacements :
+   - pattern : "_.*" 
+     replacement : ~
+   - pattern : "^[^a-zA-Z]*"
+     replacement : ~
+
+predicate : biolink:associated_with_increased_likelihood_of
+
+object :
+ value_column_name : A
+ expected_classes:
+   - biolink:Disease
+ regex_replacements :
+   - pattern : '.$'
+     replacement : ~
+   - pattern : 'coeliac disease'
+     replacement : 'celiac disease'
+   - pattern : '_'
+     replacement : ~
+
+attributes : 
+ p :
+   value : 'not_applicable'
+ relationship_type : 
+   value : cox_regression
+ p_correction_method : 
+   value : 'not_applicable'
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
+
+sections : 
+ - subject :
+     value_column_name : L
+   attributes :
+     relationship_strength :
+       column_name : F
+     n :
+       column_name : I
+ - subject :
+     value_column_name : V
+   attributes :
+     relationship_strength :
+       column_name : P
+     n :
+       column_name : S
