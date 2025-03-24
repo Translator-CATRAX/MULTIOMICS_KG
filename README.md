@@ -24,7 +24,7 @@ To Test a Table Config
 table_config <path_to_table_config>
 ```
 
-To Test the Utility
+Unittests
 
 ```bash
 config_checker_test
