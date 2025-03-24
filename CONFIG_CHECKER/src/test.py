@@ -1,3 +1,5 @@
+from src.utils import (
+    toolkit, arguments, kg_config_parser)
 import unittest
 
 
@@ -29,7 +31,7 @@ class TestKgConfigParser(unittest.TestCase):
             "tfidf_vectorizer": ""
         }
         self.assertEqual(
-            kgConfigParser.check_kg_subconfigs(valid_kg_config), None)
+            kg_config_parser.check_kg_subconfigs(valid_kg_config), None)
         # Test that check_kg_subconfigs raises a ValueError exception when the
         # given kg_config is invalid
         invalid_kg_config = {
@@ -46,29 +48,29 @@ class TestKgConfigParser(unittest.TestCase):
             "confidence_model": "",
         }
         with self.assertRaises(ValueError):
-            kgConfigParser.check_kg_subconfigs(invalid_kg_config)
+            kg_config_parser.check_kg_subconfigs(invalid_kg_config)
 
     def test_check_int(self) -> None:
         self.assertEqual(
-            kgConfigParser.check_int(1, ""), None)
+            kg_config_parser.check_int(1, ""), None)
         with self.assertRaises(ValueError):
-            kgConfigParser.check_int(["list"], "")
+            kg_config_parser.check_int(["list"], "")
 
     def test_check_float(self) -> None:
         self.assertEqual(
-            kgConfigParser.check_float(1.0, ""), None)
+            kg_config_parser.check_float(1.0, ""), None)
         with self.assertRaises(ValueError):
-            kgConfigParser.check_float(["list"], "")
+            kg_config_parser.check_float(["list"], "")
 
     def test_check_str(self) -> None:
         self.assertEqual(
-            kgConfigParser.check_str("str", ""), None)
+            kg_config_parser.check_str("str", ""), None)
         with self.assertRaises(ValueError):
-            kgConfigParser.check_str(["list"], "")
+            kg_config_parser.check_str(["list"], "")
 
     def test_check_pkl(self) -> None:
         with self.assertRaises(ValueError):
-            kgConfigParser.check_pkl(r"file.xlsx", "")
+            kg_config_parser.check_pkl(r"file.xlsx", "")
 
 
 class TestToolkit(unittest.TestCase):

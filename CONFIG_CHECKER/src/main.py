@@ -1,6 +1,7 @@
 from src.utils import (
     toolkit, kg_config_parser,
     table_config_parser, arguments)
+import sys
 
 
 def table_config_main() -> None:
