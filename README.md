@@ -37,7 +37,8 @@ column_style: # alphabetic (A-ZZ), numeric (1-100), else normal
 method_notes : # Addtional details describing the methodology of the tabular data
 
 data_location :
- path_to_file : # <Path to the Supplemental Table, Absolute or Relative to Where You Execute the Script>
+ path_to_file : # <Path to the Supplemental Table, Absolute or Relative to Where You 
+ # Execute the Script>
  delimiter : # ONLY if CSV, TSV, TXT File
  sheet_to_use : # ONLY if XLS or XLSX File
  first_line : # First Line to Use / ONLY if XLS or XLSX File
