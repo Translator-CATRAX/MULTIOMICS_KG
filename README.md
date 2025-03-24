@@ -60,6 +60,9 @@ tfidf_vectorizer : # Pretrained Sklearn TFIDF Vectorizer Model
 
 column_style: # alphabetic (A-ZZ), numeric (1-100), else normal
 
+domain :
+ - # List of MESH:CURIES
+
 method_notes : # Addtional details describing the methodology of the tabular data
 
 data_location :
