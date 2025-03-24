@@ -6,7 +6,7 @@ Here are the configs for MultiomicsKG. Feel free to add or edit any of these as 
 
 ### Usage (Unix)
 
-**First Install the Tool Utility as a Module**
+*First Install the Utility as a Module*
 
 ```bash
 pip install -e <path_to_CONFIG_CHECKER>
