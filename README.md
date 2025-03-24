@@ -4,6 +4,32 @@
 
 Here are the configs for MultiomicsKG. Feel free to add or edit any of these as you see fit. I'll add a config checker and complete guidelines here soon.
 
+### Usage (Unix)
+
+**First Install the Tool Utility as a Module**
+
+```bash
+pip install -e <path_to_CONFIG_CHECKER>
+```
+
+To Test a KG Config
+
+```bash
+kg_config <path_to_kg_config>
+```
+
+To Test a Table Config
+
+```bash
+table_config <path_to_table_config>
+```
+
+To Test the Utility
+
+```bash
+config_checker_test
+```
+
 ### KG Config Usage
 
 ```yaml
