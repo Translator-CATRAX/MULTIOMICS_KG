@@ -1,5 +1,6 @@
 from src.utils import (
-    toolkit, arguments, kg_config_parser)
+    toolkit, arguments, kg_config_parser,
+    table_config_parser)
 import unittest
 
 
@@ -73,6 +74,36 @@ class TestKgConfigParser(unittest.TestCase):
             kg_config_parser.check_pkl(r"file.xlsx", "")
 
 
+class TestTableConfigParser(unittest.TestCase):
+
+    def test_check_section(self) -> None:
+        with self.assertRaises(ValueError):
+            table_config_parser.check_pkl([])
+
+    def test_check_column_style(self) -> None:
+        self.assertEqual(
+            table_config_parser.check_column_style("str"), None)
+        with self.assertRaises(ValueError):
+            table_config_parser.check_column_style(["list"])
+
+    def test_check_data_location(self) -> None:
+        self.assertEqual(
+            table_config_parser.check_data_location("FILE.XLsx"), None)
+        self.assertEqual(
+            table_config_parser.check_data_location("PATH/FILE.xls"), None)
+        with self.assertRaises(ValueError):
+            table_config_parser.check_data_location("FIle.NOT.xlsx")
+            table_config_parser.check_data_location(".tiff")
+
+    def test_check_download_url(self) -> None:
+        self.assertEqual(
+            table_config_parser.check_check_download_url(
+                "https://www.google.com"), None)
+        with self.assertRaises(ValueError):
+            table_config_parser.check_check_download_url(
+                "https://www.THIS_IS_NOTawebsiteORANYTHIN.KIWIKI.FR")
+
+
 class TestToolkit(unittest.TestCase):
 
     def test_fast_extension(self) -> None:
@@ -105,7 +136,8 @@ def main() -> None:
     Note: unittest.main() does not work with the setup.py
     """
     test_classes: list[type] = [
-        TestArguments, TestKgConfigParser, TestToolkit]
+        TestArguments, TestKgConfigParser, TestToolkit,
+        TestTableConfigParser]
     suite: unittest.TestSuite = unittest.TestSuite()
     for test_class in test_classes:
         suite.addTests(
