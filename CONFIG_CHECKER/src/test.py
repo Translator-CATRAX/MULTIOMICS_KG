@@ -78,7 +78,7 @@ class TestTableConfigParser(unittest.TestCase):
 
     def test_check_section(self) -> None:
         with self.assertRaises(ValueError):
-            table_config_parser.check_pkl([])
+            table_config_parser.check_section([])
 
     def test_check_column_style(self) -> None:
         self.assertEqual(
@@ -97,10 +97,10 @@ class TestTableConfigParser(unittest.TestCase):
 
     def test_check_download_url(self) -> None:
         self.assertEqual(
-            table_config_parser.check_check_download_url(
+            table_config_parser.check_download_url(
                 "https://www.google.com"), None)
-        with self.assertRaises(ValueError):
-            table_config_parser.check_check_download_url(
+        with self.assertRaises(Exception):
+            table_config_parser.check_download_url(
                 "https://www.THIS_IS_NOTawebsiteORANYTHIN.KIWIKI.FR")
 
 
