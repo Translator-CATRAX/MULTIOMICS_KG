@@ -1,4 +1,4 @@
-# MultiomicsKG (0.0.1)
+# MultiomicsKG (1.0.2)
 
 ## Skye Goetz, Gwênlyn Glusman, and the Catrax Team
 
