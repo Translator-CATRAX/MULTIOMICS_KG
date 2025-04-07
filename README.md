@@ -51,6 +51,8 @@ predicates_sqlite :
 
 confidence_model : # Pretrained Sklearn Linear Regression Model
 tfidf_vectorizer : # Pretrained Sklearn TFIDF Vectorizer Model
+
+pubmed_sqlite : 
 ```
 
 ### Table Config Usage
@@ -59,9 +61,6 @@ tfidf_vectorizer : # Pretrained Sklearn TFIDF Vectorizer Model
 # USE "~" FOR "None"
 
 column_style: # alphabetic (A-ZZ), numeric (1-100), else normal
-
-domain :
- - # List of MESH:CURIES
 
 method_notes : # Addtional details describing the methodology of the tabular data
 
