@@ -2,7 +2,7 @@
 
 ## Skye Goetz, Gwênlyn Glusman, and the Catrax Team
 
-Here are the configs for MultiomicsKG. Feel free to add or edit any of these as you see fit. There's a config checker and guidelines here too.
+Here are the configs for MultiomicsKG. Feel free to add or edit any of these as you see fit. There's a config checker and guidelines here too. **Some configs are now written by programs.**
 
 ### Usage (Unix)
 
