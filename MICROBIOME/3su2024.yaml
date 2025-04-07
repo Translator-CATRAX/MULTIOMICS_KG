@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Detailed information of the 14 differential genus identified by Wilcox test in the Atherosclerotic Cardiovascular Disease group"
 
@@ -48,7 +47,7 @@ attributes :
  relationship_type : 
    value : Wilcoxon rank-sum test
  p_correction_method : 
-   value : benjamini hochberg
+   value : benjamini_hochberg
  knowledge_level : 
    value : statistical_association
  agent_type : 

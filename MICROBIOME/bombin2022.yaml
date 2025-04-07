@@ -1,125 +1,671 @@
-column_style: "alphabetic"
-
-domain : 
- - MESH:D000069196
- - MESH:D055442
-
-method_notes : "The influence of predicted bacterial enzymes, Kegg orthologs, and MetaCyc pathways abundances on plasma and stool metabolites concentrations"
-
-data_location :
- path_to_file : downloads/Bombin2022.xlsx
-
-provenance : 
- publication : 'PMC:PMC8980904'
- publication_name : 'Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa'
- authors : 'Bombin et. al.'
- year_published : 2022
- journal : 'Physiolocial Reports'
- table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
- yaml_curator : Skye Goetz
- curator_organization : Institute for Systems Biology (ISB)
-
-subject :
- value_column_name : C
- regex_replacements :
-   - pattern : ".*Plasma_"
-     replacement : ~
-   - pattern : ".*Stool_"
-     replacement : ~
-   - pattern : ' \(.*'
-     replacement : ~
-   - pattern : ' \[.*'
-     replacement : ~
-   - pattern : '\.*'
-     replacement : ~ 
- expected_taxa : 
-   - NCBITaxon:9606
-
-predicate : biolink:correlated_with
-
-object :
- value_column_name : F
- regex_replacements :
-   - pattern : '.*; '
-     replacement : ~
-   - pattern : ' \[.*'
-     replacement : ~
-   - pattern : ' \(.*'
-     replacement : ~
-   - pattern : '\.*'
-     replacement : ~ 
- expected_taxa : 
-   - NCBITaxon:9606
-
-attributes : 
- p :
-   column_name : G
- n :
-   value : 219
- relationship_strength : 
-   value : "not_applicable"
- relationship_type : 
-   value : spearman_correlation
- p_correction_method : 
-   value : benjamini_hochberg
- knowledge_level : 
-   value : statistical_association
- agent_type : 
-   value : data_analysis_pipeline
-
-sections :
- - data_location :
-     sheet_to_use : S9B
-     first_line : 2
-     last_line : 4970
-   method_notes : "The effect of ECs identified from salivary samples on stool metabolites concentrations"
- - data_location :
-     sheet_to_use : S9C
-     first_line : 2
-     last_line : 78
-   method_notes : "The effect of ECs identified from fecal samples on plasma metabolites concentrations"
- - data_location :
-     sheet_to_use : S9D
-     first_line : 2
-     last_line : 517
-   method_notes : "The effect of ECs identified from fecal samples on stool metabolites concentrations"
- - data_location :
-     sheet_to_use : S9G
-     first_line : 2
-     last_line : 285
-   method_notes : "The effect of KOs identified from salivary samples on plasma metabolites concentrations"
- - data_location :
-     sheet_to_use : S9H
-     first_line : 2
-     last_line : 1862
-   method_notes : "The effect of KOs identified from salivary samples on stool metabolites concentrations"
- - data_location :
-     sheet_to_use : S9I
-     first_line : 2
-     last_line : 324
-   method_notes : "The effect of KOs identified from fecal samples on plasma metabolites concentrations"
- - data_location :
-     sheet_to_use : S9J
-     first_line : 2
-     last_line : 831
-   method_notes : "The effect of KOs identified from fecal samples on stool metabolites concentrations"
- - data_location :
-     sheet_to_use : S9K
-     first_line : 2
-     last_line : 9
-   method_notes : "The effect of MetaCyc pathways identified from salivary samples on plasma metabolites concentrations"
- - data_location :
-     sheet_to_use : S9L
-     first_line : 2
-     last_line : 25
-   method_notes : "The effect of MetaCyc pathways identified from salivary samples on stool metabolites concentrations"
- - data_location :
-     sheet_to_use : "S9E"
-     first_line : 2
-     last_line : 7985
-   method_notes : "The effect of MetaCyc pathways identified from fecal samples on plasma metabolites concentrations"
- - data_location :
-     sheet_to_use : "S9F"
-     first_line : 2
-     last_line : 24269
-   method_notes : "The effect of MetaCyc pathways identified from fecal samples on stool metabolites concentrations"
+sections:
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9B
+    first_line: 2
+    last_line: 4970
+  method_notes: The effect of ECs identified from salivary samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9C
+    first_line: 2
+    last_line: 78
+  method_notes: The effect of ECs identified from fecal samples on plasma metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9D
+    first_line: 2
+    last_line: 517
+  method_notes: The effect of ECs identified from fecal samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9G
+    first_line: 2
+    last_line: 285
+  method_notes: The effect of KOs identified from salivary samples on plasma metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    - pattern: uncharacterized protein
+      replacement: '""'
+    - pattern: uncharacterized protein
+      replacement: '""'
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9H
+    first_line: 2
+    last_line: 1862
+  method_notes: The effect of KOs identified from salivary samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    - pattern: uncharacterized protein
+      replacement: '""'
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9I
+    first_line: 2
+    last_line: 324
+  method_notes: The effect of KOs identified from fecal samples on plasma metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9J
+    first_line: 2
+    last_line: 831
+  method_notes: The effect of KOs identified from fecal samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9K
+    first_line: 2
+    last_line: 9
+  method_notes: The effect of MetaCyc pathways identified from salivary samples on plasma metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9L
+    first_line: 2
+    last_line: 25
+  method_notes: The effect of MetaCyc pathways identified from salivary samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9E
+    first_line: 2
+    last_line: 7985
+  method_notes: The effect of MetaCyc pathways identified from fecal samples on plasma metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    - pattern: uncharacterized protein
+      replacement: '""'
+    expected_taxa:
+    - NCBITaxon:9606
+- data_location:
+    path_to_file: downloads/Bombin2022.xlsx
+    sheet_to_use: S9F
+    first_line: 2
+    last_line: 24269
+  method_notes: The effect of MetaCyc pathways identified from fecal samples on stool metabolites concentrations
+  column_style: alphabetic
+  provenance:
+    publication: PMC:PMC8980904
+    publication_name: Obesity influences composition of salivary and fecal microbiota and impacts the interactions between bacterial taxa
+    authors: Bombin et. al.
+    year_published: 2022
+    journal: Physiolocial Reports
+    table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/8980904/bin/PHY2-10-e15254-s002.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  predicate: biolink:correlated_with
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 219
+    relationship_strength:
+      value: not_applicable
+    relationship_type:
+      value: spearman_correlation
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: .*Plasma_
+      replacement: null
+    - pattern: .*Stool_
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+  object:
+    value_column_name: F
+    regex_replacements:
+    - pattern: '.*; '
+      replacement: null
+    - pattern: ' \[.*'
+      replacement: null
+    - pattern: ' \(.*'
+      replacement: null
+    - pattern: \.*
+      replacement: null
+    - pattern: uncharacterized protein
+      replacement: '""'
+    expected_taxa:
+    - NCBITaxon:9606

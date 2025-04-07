@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Correlation analysis between 21 CRC microbial markers and 28 metabolites that were significantly different between CRC and healthy gut communities, 14 were enriched in CRC cases and 14 were enriched in healthy controls. "
 

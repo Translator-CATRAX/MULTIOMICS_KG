@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : " Results include p- value based in Infection category, False Discover Rate (FDR), adjusted p- value based on Tissue and Infection status, Paired p- value (Tukey), and mean abundance for each Tissue and Infection condition."
 
@@ -48,7 +47,7 @@ attributes :
  n  :
    value : 24
  relationship_strength : 
-  value : "not applicable"
+  value : "not_applicable"
  relationship_type : 
    value : ANOVA
  p_correction_method : 

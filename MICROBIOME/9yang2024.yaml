@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
- - MESH:D016678
+column_style : "alphabetic"
 
 method_notes : "Differential secondary bile acid production microorganisms consistent with alteration of corresponding gene in patiens with UC, CD, CRC and NAFLD"
 

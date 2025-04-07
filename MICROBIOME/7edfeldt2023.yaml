@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
- - MESH:D016678
+column_style : "alphabetic"
 
 method_notes : "Pathway enrichment analysis for the differentially expressed genes by pairwise comparisons between the luminal samples"
 

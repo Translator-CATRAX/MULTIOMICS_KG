@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
- - MESH:D055442
+column_style : "alphabetic"
 
 data_location :
  path_to_file : downloads/2yuan2020.xlsx

@@ -1,3 +1,5 @@
+# Skye Goetz (ISB) 11/25/24
+
 column_style : "alphabetic"
 
 domain : 
@@ -71,11 +73,13 @@ object :
    - pattern : "Mahajan "
      replacement : ~
  expected_classes :
-  - biolink:Protein
-  - biolink:ClinicalFinding
-  - biolink:ChemicalEntitiy
-  - biolink:PhenotypicFeature
-  - biolink:Disease
+   - biolink:Protein
+   - biolink:ClinicalFinding
+   - biolink:ChemicalEntitiy
+   - biolink:PhenotypicFeature
+   - biolink:Disease
+ expected_taxa :
+   - NCBITaxon:9606
 
 attributes : 
  p :

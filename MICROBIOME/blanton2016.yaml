@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/24/24
 
-domain : 
- - MESH:D000069196
- - MESH:D055442
+column_style : "alphabetic"
 
 method_notes : "Spearman rank correlations between levels of metabolites and the abundances of bacterial species in the fecal microbiota of mice colonized with the healthy versus the severely stunted/underweight infant microbiota"
 

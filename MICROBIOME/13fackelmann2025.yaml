@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/25
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Significant (FDR < 0.1), meta-analysed Spearman correlations between the arcsine-transformed relative abundances of each SGB within each individual and amount of meat (red and white), dairy products, fruits and vegetables consumed. pval.random, P value for test of overall effect of random-effects model. TE.random, estimated overall effect of random-effects model. seTE.random, standard error of fixed effect model. lower.random and upper.random, lower and upper confidence interval limits of random-effects model."
 
@@ -49,11 +48,11 @@ attributes :
  n :
    value : 21561
  relationship_strength : 
-   value : not applicable
+   value : not_applicable
  relationship_type : 
    value : Spearman Correlation
  p_correction_method : 
-   value : benjamini hochberg
+   value : benjamini_hochberg
  knowledge_level : 
    value : statistical_association
  agent_type : 

@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/22/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Multivariate analysis of relative abundances of amplicon sequence variants (ASVs) in vaginal 16S rRNA gene data as a function of gestational age, maternal age, parity, ethnicity, and marijuana use among women who ultimately delivered at term. The p-value and false discovery rate adjusted p-value (q-value) are provided for each covariate."
 

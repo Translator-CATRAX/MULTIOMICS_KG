@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Results from linear mixed effect modelling to regress the Euclidean distance between every pair of FC/CC and pre-treatment or during treatment samples against Time, Treatment and patient ID for the Longitudinal Observational Cohort."
 

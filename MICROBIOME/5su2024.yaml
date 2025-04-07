@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Detailed information of the 69 differential bacterial species identified by wilcox test and LDA score (FC>1.2, LDA>2, Relative abundance > 0.01) in the Atherosclerotic Cardiovascular Disease group"
 
@@ -46,7 +45,7 @@ attributes :
  relationship_type : 
    value : Wilcoxon rank-sum test
  p_correction_method : 
-   value : Benjamini Hochberg
+   value : benjamini_hochberg
  knowledge_level : 
    value : statistical_association
  agent_type : 

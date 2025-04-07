@@ -1,7 +1,6 @@
-column_style : "normal"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "normal"
 
 method_notes : "Colors of the heatmap are in correspondence to the beta coefficient for frailty-related clinical biomarkers from linear regression models in MaAsLin with frailty-related species (AST-transformed relative abundance) as outcomes. The biomarkers levels were standardized into Z-scores of in before including them in the MaAsLin models. All models corrected for age, sex, BMI, smoking, drinking status, educational level, and physical activity level. The Benjamini-Hochberg method is used to calculate FDR-adjusted P values to address the multiple comparison issue. These analyses were based on 1,448 samples. All the statical tests were two-sided."
 

@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/25
 
-domain : 
- - MESH:D000069196
- - MESH:D055442
+column_style : "alphabetic"
 
 method_notes : "Five Mendelian randomization models estimate the causal effects of gut microbiota on blood metabolites"
 
@@ -53,7 +51,7 @@ attributes :
  relationship_type : 
    column_name : C
  p_correction_method : 
-   value : benjamini hochberg
+   value : benjamini_hochberg
  knowledge_level : 
    value : statistical_association
  agent_type : 

@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
- - MESH:D059467
+column_style : "alphabetic"
 
 method_notes : "List of transcripts which were significantly correlated with each of the top 15 most correlated microbial families."
 

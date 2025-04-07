@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Vaginal bacterial taxa with highly correlated relative abundances based on longitudinal sampling in women who ultimately delivered at term. Significance of correlations between log-transformed relative abundances was assessed using linear mixed-effects models."
 

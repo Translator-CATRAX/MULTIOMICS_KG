@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/25
 
-domain : 
- - MESH:D000069196
- - MESH:D016678
+column_style : "alphabetic"
 
 method_notes : "Table S13. Total number of DEGs with significant (padj ≤ 0.05) expression differences between conditions MEVs treated vs Control (non-treated). Relationship Strengh a log2FoldChange"
 
@@ -44,7 +42,7 @@ attributes :
  relationship_type : 
    value : spearman correlation
  p_correction_method : 
-   value : not applicable
+   value : not_applicable
  knowledge_level : 
    value : statistical_association
  agent_type : 

@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 data_location :
  sheet_to_use : "시트1"

@@ -1,58 +1,49 @@
-column_style : "alphabetic"
-
-domain : 
- - MESH:D000069196
- - MESH:D059467
-
-method_notes : "MaAsLin analysis results for all clinical phenotypes and gene expression associated with microbial abundance"
-
-data_location :
- path_to_file : downloads/Haberman2014.xlsx
- sheet_to_use : "Sheet1"
- first_line : 5
- last_line : 108
-
-provenance : 
- publication : 'PMC:PMC4109533'
- publication_name : Pediatric Crohn disease patients exhibit specific ileal transcriptome and microbiome signature
- authors : Haberman et. al.
- year_published : 2014
- journal : 'The Journal of Clinical Investigation'
- table_url : https://pmc.ncbi.nlm.nih.gov/articles/instance/4109533/bin/JCI75436sd16.xlsx
- yaml_curator : Skye Goetz
- curator_organization : Institute for Systems Biology (ISB)
-
-object :
- value_column_name : A
- expected_classes:
-   - biolink:Gene
-
-predicate : biolink:associated_with
-
-subject :
- value_column_name : B
- expected_classes:
-   - biolink:OrganismTaxon
- regex_replacements :
-   - pattern : '.*?__'
-     replacement : ~
-
-attributes : 
- p :
-   column_name : F
- n  :
-   column_name : D
- relationship_strength : 
-  column_name : C
-  math:
+column_style: alphabetic
+method_notes: MaAsLin analysis results for all clinical phenotypes and gene expression associated with microbial abundance
+data_location:
+  path_to_file: downloads/Haberman2014.xlsx
+  sheet_to_use: Sheet1
+  first_line: 5
+  last_line: 108
+provenance:
+  publication: PMC:PMC4109533
+  publication_name: Pediatric Crohn disease patients exhibit specific ileal transcriptome and microbiome signature
+  authors: Haberman et. al.
+  year_published: 2014
+  journal: The Journal of Clinical Investigation
+  table_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/4109533/bin/JCI75436sd16.xlsx
+  yaml_curator: Skye Goetz
+  curator_organization: Institute for Systems Biology (ISB)
+object:
+  value_column_name: A
+  expected_classes:
+  - biolink:Gene
+  expected_taxa:
+  - NCBITaxon:9606
+predicate: biolink:associated_with
+subject:
+  value_column_name: B
+  expected_classes:
+  - biolink:OrganismTaxon
+  regex_replacements:
+  - pattern: .*?__
+    replacement: null
+attributes:
+  p:
+    column_name: F
+  n:
+    column_name: D
+  relationship_strength:
+    column_name: C
+    math:
     - operation: copysign
       parameter: '-1'
-      order_last: yes
- relationship_type : 
-   value : spearman_correlation
- p_correction_method : 
-   value : benjamini_hochberg
- knowledge_level : 
-   value : statistical_association
- agent_type : 
-   value : data_analysis_pipeline
+      order_last: true
+  relationship_type:
+    value: spearman_correlation
+  p_correction_method:
+    value: benjamini_hochberg
+  knowledge_level:
+    value: statistical_association
+  agent_type:
+    value: data_analysis_pipeline

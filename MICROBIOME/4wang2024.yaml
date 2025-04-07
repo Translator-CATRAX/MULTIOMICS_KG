@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Full result of MR estimates for the association between gut microbiota and FI"
 
@@ -37,11 +36,11 @@ attributes :
  n :
    value : 193566
  relationship_strength : 
-   value : not applicable
+   value : not_applicable
  relationship_type : 
    column_name : C
  p_correction_method : 
-   value : not applicable
+   value : not_applicable
  knowledge_level : 
    value : statistical_association
  agent_type : 

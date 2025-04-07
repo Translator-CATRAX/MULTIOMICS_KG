@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
- - MESH:D055442
+column_style : "alphabetic"
 
 method_notes : "Pairs of microbes and targeted metabolites with significant spearman correlations at q-value < 0.05 with their correlation values for each time point."
 

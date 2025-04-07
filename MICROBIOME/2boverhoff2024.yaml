@@ -1,58 +1,52 @@
-column_style : "alphabetic"
-
-domain : 
- - MESH:D000069196
-
-method_notes : "Associations of variables and bacterial groups. The following parameters were utilised: (Coeff. >|2.00|; p.adjusted <0.1)"
-
-data_location :
- path_to_file : downloads/Boverhoff2024.xlsx
- sheet_to_use : Supplementary Table 1
- first_line : 2
- last_line : 122
-
-provenance : 
- publication : 'PMID:39264809'
- publication_name : Profiling the fecal microbiome and its modulators across the lifespan in the Netherlands
- authors : Boverhoff et. al.
- year_published : 2024
- journal : 'Cell Reports'
- table_url : https://ars.els-cdn.com/content/image/1-s2.0-S2211124724010805-mmc2.xlsx
- yaml_curator : Skye Goetz
- curator_organization : Institute for Systems Biology (ISB)
-
-subject :
- value_column_name : C
- regex_replacements :
-   - pattern : "f_"
-     replacement : ~
- expected_classes :
-   - biolink:OrganismTaxon
-
-predicate : biolink:associated_with
-
-object :
- value_column_name : D
- regex_replacements :
-   - pattern : '\(.*$'
-     replacement : ~
-   - pattern : '^[^:]*:'
-     replacement : ~
-   - pattern : "_9"
-     replacement : ~
-
-attributes : 
- p :
-   column_name : G
- n :
-   value : 3746 
- relationship_strength : 
-  column_name : E
- relationship_type : 
-   value : two-sided unpaired Wilcoxon rank-sum test
- p_correction_method : 
-   value : benjamini_hochberg
- knowledge_level : 
-   value : statistical_association
- agent_type : 
-   value : data_analysis_pipeline
+sections:
+- column_style: alphabetic
+  method_notes: 'Associations of variables and bacterial groups. The following parameters were utilised: (Coeff. >|2.00|; p.adjusted <0.1)'
+  data_location:
+    path_to_file: downloads/Boverhoff2024.xlsx
+    sheet_to_use: Supplementary Table 1
+    first_line: 2
+    last_line: 122
+  provenance:
+    publication: PMID:39264809
+    publication_name: Profiling the fecal microbiome and its modulators across the lifespan in the Netherlands
+    authors: Boverhoff et. al.
+    year_published: 2024
+    journal: Cell Reports
+    table_url: https://ars.els-cdn.com/content/image/1-s2.0-S2211124724010805-mmc2.xlsx
+    yaml_curator: Skye Goetz
+    curator_organization: Institute for Systems Biology (ISB)
+  subject:
+    value_column_name: C
+    regex_replacements:
+    - pattern: f_
+      replacement: null
+    expected_classes:
+    - biolink:OrganismTaxon
+  predicate: biolink:associated_with
+  object:
+    value_column_name: D
+    regex_replacements:
+    - pattern: \(.*$
+      replacement: null
+    - pattern: '^[^:]*:'
+      replacement: null
+    - pattern: _9
+      replacement: null
+    expected_taxa:
+    - NCBITaxon:9606
+    - NCBITaxon:9606
+  attributes:
+    p:
+      column_name: G
+    n:
+      value: 3746
+    relationship_strength:
+      column_name: E
+    relationship_type:
+      value: two-sided unpaired Wilcoxon rank-sum test
+    p_correction_method:
+      value: benjamini_hochberg
+    knowledge_level:
+      value: statistical_association
+    agent_type:
+      value: data_analysis_pipeline

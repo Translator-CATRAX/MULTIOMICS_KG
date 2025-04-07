@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Comparison of analyses evaluating the relationship between gestational age and the vaginal microbiota using absolute abundance analysis (Analysis of Composition of Microbiomes; ANCOM) and relative abundance analysis (Linear mixed-effects models; LME)."
 

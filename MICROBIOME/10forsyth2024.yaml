@@ -1,8 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
- - MESH:D016678
+column_style : "alphabetic"
 
 data_location :
  path_to_file : downloads/10Forsyth2024.xlsx
@@ -32,7 +30,7 @@ subject :
  expected_taxa : 
    - NCBITaxon:10090
 
-predicate : biolink:increases_ammount_or_activity_of
+predicate : biolink:correlated_with
 
 object :
  value_column_name : B
@@ -55,7 +53,7 @@ attributes :
  relationship_strength : 
   column_name : C
  relationship_type : 
-   value : CLR_KW
+   value : SparCC
  p_correction_method : 
    value : benjamini_hochberg
  knowledge_level : 

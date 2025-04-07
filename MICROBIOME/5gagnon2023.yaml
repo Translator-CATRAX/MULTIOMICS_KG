@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Primary Mendelian randomization results and associated statistics."
 
@@ -52,6 +51,8 @@ object :
  regex_replacements :
    - pattern : "_"
      replacement : " "
+ expected_taxa :
+   - NCBITaxon:9606
 
 attributes : 
  p :

@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 11/25/24
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "While we saw similar patterns across all four of the allergy diagnoses, 11 pathways were significantly different in at least two of the allergy diagnoses and one of the composite groups, all of which were also significantly associated with predicted age"
 

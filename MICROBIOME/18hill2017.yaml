@@ -1,7 +1,6 @@
-column_style : "alphabetic"
+# Skye Goetz (ISB) 03/04/2025
 
-domain : 
- - MESH:D000069196
+column_style : "alphabetic"
 
 method_notes : "Significant negative correlations of abundances of genera pairs. Correlations were tested with Pearson correlation. The false discovery rate was adjusted for with Benjamini-Hochberg adjustment."
 
