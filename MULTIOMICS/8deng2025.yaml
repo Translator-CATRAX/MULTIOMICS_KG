@@ -1,0 +1,49 @@
+# Skye Goetz (ISB) 03/04/2025
+
+column_style : "alphabetic"
+
+method_notes : "Associations between proteins and cluster's multimorbidity levels. Proteomic classification of 660 diseases into 40 clusters. The heatmap shows the enrichment of GO BP gene sets in disease clusters detected by gene set enrichment analysis. Color of heatmap indicates the mean value of pathway scores for diseases in this cluster. Asterisk∗ depicts pathways differently regulated between one cluster and others (FDR < 0.01)."
+
+data_location :
+ path_to_file : downloads/8deng2025.xlsx
+ sheet_to_use : Table S7
+ first_line : 3
+ last_line : 16358
+
+provenance : 
+ publication : 'PMID:39579765'
+ publication_name : "Atlas of the plasma proteome in health and disease in 53,026 adults"
+ authors : Deng et. al.
+ year_published : 2025
+ journal : Cell
+ table_url : https://www.cell.com/cms/10.1016/j.cell.2024.10.045/attachment/765b3106-d659-4412-a27b-b7e76d7895e9/mmc7.xlsx
+ yaml_curator : Skye Goetz
+ curator_organization : Institute for Systems Biology (ISB)
+
+subject :
+ value_column_name : B
+ expected_classes :
+   - biolink:Gene
+ expected_taxa :
+   - NCBITaxon:9606
+
+predicate : biolink:associated_with
+
+object :
+ value : multimorbidity
+
+attributes : 
+ p :
+   column_name : E
+ n :
+   value : 53026 
+ relationship_strength : 
+   value : not_applicable
+ relationship_type : 
+   value : pathway score
+ p_correction_method : 
+   value :  bonferroni
+ knowledge_level : 
+   value : statistical_association
+ agent_type : 
+   value : data_analysis_pipeline
