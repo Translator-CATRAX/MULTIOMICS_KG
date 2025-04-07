@@ -1,0 +1,21 @@
+knowledge_graph_name : Microbiome_KG
+version_number : "1.3.2"
+max_workers : 16
+p_value_cutoff : 0.1
+progress_handler_timeout : 1.2
+
+config_directories:
+ - /15TB_2/sgoetz/Tablassert/MultiomicsKP/MBKG
+ #- /15TB_2/sgoetz/Tablassert/MultiomicsKP/MOKG
+ #- /15TB_2/sgoetz/Tablassert/MultiomicsKP/DEBUG
+
+override_sqlite : /15TB_2/sgoetz/History/Tablassert2/Tablassert2/src/database/store/override.db
+supplement_sqlite : /15TB_2/sgoetz/History/Tablassert2/Tablassert2/src/database/store/supplement.db
+babel_sqlite : /ssd/sgoetz/BABEL.db  # /15TB_3/BABEL/BABEL.db
+kg2_sqlite : /15TB_2/sgoetz/History/Tablassert2/Tablassert2/src/database/store/KG2.10.1.db
+
+predicates_sqlite : /15TB_2/sgoetz/History/Tablassert3/resources/predicates.db
+confidence_model : /15TB_2/sgoetz/History/Tablassert3/edge_scores/confidence_model.pkl
+tfidf_vectorizer : /15TB_2/sgoetz/History/Tablassert3/edge_scores/tfidf_vectorizer.pkl
+
+pubmed_sqlite : /ssd/sgoetz/PubMed.db
