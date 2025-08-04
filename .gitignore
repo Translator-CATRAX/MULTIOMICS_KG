@@ -1,0 +1,4 @@
+CONFIG_CHECKER/venv
+CONFIG_CHECKER/TABLASSERT_CONFIG_CHECKER.egg-info
+CONFIG_CHECKER/src/__pycache__
+CONFIG_CHECKER/src/utils/__pycache__

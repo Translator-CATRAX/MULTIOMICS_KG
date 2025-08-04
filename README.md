@@ -1,3 +1,7 @@
+# THIS REPO IS DEPRICATED AND ONLY SUPPORTS TABLASSERT 3.1.3
+
+See [Tablassert 4.3.0](https://github.com/SkyeAv/Tablassert/tree/4.3.0) for updated config stores and checkers. The configs are now in a submodule.
+
 # MultiomicsKG (1.0.2)
 
 ## Skye Goetz, Gwênlyn Glusman, and the Catrax Team
